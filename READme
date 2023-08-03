@@ -1,0 +1,12 @@
+- config (variable)
+- router (react-router)
+- layout
+- components
+- service (api call)
+- library / helper (function global)
+
+- Page
+   - page-name
+        - folder-component
+        - index.tsx
+        - page-name.function.ts

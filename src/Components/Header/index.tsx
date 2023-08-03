@@ -1,0 +1,13 @@
+import React from 'react';
+import HeaderStyle from './HeaderStyle';
+interface IHeaderProps {
+    label: string | null;
+}
+const Header: React.FC<IHeaderProps> = ({ label }) => {
+    return (
+        <HeaderStyle>
+            <h5 className="header-title">{label}</h5>
+        </HeaderStyle>
+    );
+};
+export default Header;
