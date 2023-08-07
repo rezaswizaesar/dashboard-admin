@@ -3,7 +3,7 @@ import { Container } from '../../../Helper/ContainerStyle';
 import LoginStyle from './LoginStyle';
 import FitHubLogo from '../../../assets/images/fithub-tp.png';
 import packageJson from '../../../../package.json';
-import FormCard from './partial/FormCard';
+import FormCard from './component/FormCard';
 import { Col, Row } from 'antd';
 
 const LoginPage: React.FC = () => {
