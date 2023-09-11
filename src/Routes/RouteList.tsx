@@ -1,7 +1,8 @@
-import { Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import Checkin from '../Pages/Auth/Checkin';
+import PartnershipPage from '../Pages/Auth/Master/Partnership';
 import LoginPage from '../Pages/Guest/Login/index';
-import { RouteType } from './RouteList.type';
+import { RouteType } from '../types/RouteList.type';
 
 const Routelist: RouteType[] = [
     {
@@ -21,7 +22,7 @@ const Routelist: RouteType[] = [
         )
     },
     {
-        label: 'Check-in',
+        label: <Link to="/checkin">Check-in</Link>,
         icon: null,
         sidebar: true,
         header: true,
@@ -37,13 +38,13 @@ const Routelist: RouteType[] = [
         children: []
     },
     {
-        label: '',
+        label: 'Master',
         icon: null,
-        sidebar: false,
+        sidebar: true,
         header: false,
-        component: <LoginPage />,
-        path: '/',
-        routeType: 'guest',
+        component: null,
+        path: '/master',
+        routeType: 'auth',
         role: [],
         layout: (
             <>
@@ -51,19 +52,34 @@ const Routelist: RouteType[] = [
             </>
         ),
         children: [
-            // { label: '',
-            // icon: null,
-            //     sidebar: false,
-            //     header: false,
-            //     component: <LoginPage />,
-            //     path: '/',
-            //     routeType: 'guest',
-            //     layout: (
-            //         <>
-            //             <Outlet></Outlet>
-            //         </>
-            //     )
-            // }
+            {
+                label: <Link to="/master/pos-management">POS Management</Link>,
+                icon: null,
+                sidebar: true,
+                header: true,
+                component: <div />,
+                path: '/master/pos-management',
+                routeType: 'auth',
+                layout: (
+                    <>
+                        <Outlet></Outlet>
+                    </>
+                )
+            },
+            {
+                label: <Link to="/master/partnership">Partership</Link>,
+                icon: null,
+                sidebar: true,
+                header: true,
+                component: <PartnershipPage />,
+                path: '/master/partnership',
+                routeType: 'auth',
+                layout: (
+                    <>
+                        <Outlet></Outlet>
+                    </>
+                )
+            }
         ]
     }
 ];

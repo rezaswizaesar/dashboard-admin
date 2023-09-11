@@ -1,11 +1,13 @@
+import { Form } from 'antd';
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import createAxiosInstance from '../../../Service/FetchApi';
-import { FormLoginType } from './LoginType';
+import { FormLoginType } from '../../../types/LoginType';
 
 
 const LoginHandler = ()=>{
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const [form] = Form.useForm();
   const { serviceApi, apiResponse: responseSubmit } = createAxiosInstance();
   const onSubmit = (values: FormLoginType)=>{
     serviceApi({
@@ -21,6 +23,6 @@ const LoginHandler = ()=>{
       navigate('/checkin')
     }
   }, [responseSubmit.isSuccess, responseSubmit.data])
-  return {onSubmit, responseSubmit}
+  return {onSubmit, responseSubmit, form}
 }
 export default LoginHandler

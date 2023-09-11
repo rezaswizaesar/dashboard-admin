@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from '../Header';
 import Sidebar from '../Sidebar';
@@ -7,10 +7,11 @@ import LayoutStyle from './LayoutStyle';
 interface AuthLayoutProps {
     sidebar: boolean;
     header: boolean;
-    label: string | null;
+    label: ReactNode;
+    children: any;
 }
 const AuthLayout: React.FC<AuthLayoutProps> = (route) => {
-    const { header, sidebar, label } = route;
+    const { header, sidebar, label, children } = route;
     const { getConfigAuth } = AuthLayoutHandler();
     React.useEffect(() => {
         getConfigAuth({

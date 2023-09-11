@@ -2,13 +2,13 @@ import { Button, Card, Form, Input } from 'antd';
 import LoginHandler from '../LoginHandler';
 
 const FormCard = () => {
-    const { onSubmit, responseSubmit } = LoginHandler();
+    const { onSubmit, responseSubmit, form } = LoginHandler();
     return (
         <Card>
             <span className="login-section__card-top">
                 Sign in with credentials
             </span>
-            <Form onFinish={onSubmit}>
+            <Form form={form} onFinish={onSubmit}>
                 <Form.Item
                     name={'email'}
                     rules={[
@@ -19,7 +19,7 @@ const FormCard = () => {
                         }
                     ]}>
                     <Input
-                        size="large"
+                        size="middle"
                         type="email"
                         autoComplete="new-email"
                         placeholder="Email"
@@ -33,20 +33,31 @@ const FormCard = () => {
                         }
                     ]}>
                     <Input
-                        size="large"
+                        size="middle"
                         type="password"
                         autoComplete="new-password"
                         placeholder="Password"
                     />
                 </Form.Item>
                 <div className="btn-submit">
-                    <Button
-                        size="large"
-                        htmlType="submit"
-                        type="primary"
-                        loading={responseSubmit?.isLoading || false}>
-                        Submit
-                    </Button>
+                    <Form.Item shouldUpdate className="submit">
+                        {() => (
+                            <Button
+                                size="middle"
+                                htmlType="submit"
+                                type="primary"
+                                loading={responseSubmit?.isLoading || false}
+                                disabled={
+                                    !form.isFieldsTouched(true) ||
+                                    form
+                                        .getFieldsError()
+                                        .filter(({ errors }) => errors.length)
+                                        .length > 0
+                                }>
+                                Sign in
+                            </Button>
+                        )}
+                    </Form.Item>
                 </div>
             </Form>
         </Card>

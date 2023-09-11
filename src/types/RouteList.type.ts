@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 export interface RouteType {
   sidebar: boolean;
   header: boolean;
-  label: string | null;
+  label: ReactNode;
   component: ReactNode;
   icon: ReactNode | null;
   path: string;

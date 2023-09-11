@@ -3,11 +3,10 @@ import React from 'react';
 import SidebarHandler from './SidebarHandler';
 import SidebarStyle from './SidebarStyle';
 import Logo from '../../Assets/Images/fithub-tp.png';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Sidebar: React.FC = () => {
-    const { NavList } = SidebarHandler();
-
+    const { NavList, handleClickSidebar, current, openKey } = SidebarHandler();
     return (
         <SidebarStyle>
             <Link className="sidebar-top" to={'/checkin'}>
@@ -15,8 +14,9 @@ const Sidebar: React.FC = () => {
                 <span> Admin-Dashboard</span>
             </Link>
             <Menu
-                defaultSelectedKeys={['0']}
-                defaultOpenKeys={['sub1']}
+                onOpenChange={handleClickSidebar}
+                selectedKeys={[current]}
+                openKeys={openKey}
                 mode={'inline'}
                 theme={'dark'}
                 items={NavList()}

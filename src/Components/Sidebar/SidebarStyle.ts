@@ -36,7 +36,7 @@ const SidebarStyle = styled.aside`
     color: #fff;
     background-color: transparent;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 14px;
     border-radius: unset;
     margin: 10px 0px;
     &-selected{
@@ -45,13 +45,25 @@ const SidebarStyle = styled.aside`
       position: relative;
       &::after{
         content: "";
-        width: 3px;
+        width: 2px;
         position: absolute;
         left: 0;
         background-color: #5e72e4;
         top: 0;
         bottom: 0;
       }
+    }
+  }
+  &-inline{
+    background: transparent !important;
+  }
+  &-submenu{
+    color: #fff;
+    font-weight:600;
+    &-title{
+      border-bottom: 2px solid #fff;
+      border-radius: unset;
+      padding-left: 21px !important;
     }
   }
 }
