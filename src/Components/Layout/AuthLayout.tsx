@@ -11,8 +11,8 @@ interface AuthLayoutProps {
     children: any;
 }
 const AuthLayout: React.FC<AuthLayoutProps> = (route) => {
-    const { header, sidebar, label, children } = route;
-    const { getConfigAuth } = AuthLayoutHandler();
+    const { header, sidebar, label } = route;
+    const { getConfigAuth, getProfile } = AuthLayoutHandler();
     React.useEffect(() => {
         getConfigAuth({
             url: '/auth/config',
@@ -20,6 +20,14 @@ const AuthLayout: React.FC<AuthLayoutProps> = (route) => {
             method: 'GET'
         });
     }, []);
+    React.useEffect(() => {
+        getProfile({
+            url: '/auth/me',
+            method: 'GET',
+            token: true
+        });
+    }, []);
+
     return (
         <LayoutStyle>
             {header && <Header label={label} />}

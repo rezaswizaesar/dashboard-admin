@@ -35,6 +35,13 @@ const createAxiosInstance = (): {
                 Authorization: 'Bearer ' + localStorage.getItem('token')
             };
         }
+        setApiResponse({
+            isSuccess: false,
+            data: null,
+            error: null,
+            isLoading: false,
+            isError: false
+        });
         const instance: AxiosInstance = axios.create(config);
         try {
             const response: AxiosResponse = await instance(options);

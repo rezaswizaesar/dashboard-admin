@@ -18,7 +18,7 @@ const PartnershipHandler = ()=>{
   }, [serviceApi]);
   
   React.useEffect(()=>{
-    if(responseDataTable?.data){
+    if(responseDataTable?.isSuccess){
       let setKey = responseDataTable.data.data.map((item: any, key: number) =>{
         return {
           ...item,
@@ -27,7 +27,7 @@ const PartnershipHandler = ()=>{
       })
       setDataTable(setKey)
     }
-  }, [responseDataTable?.data])
+  }, [responseDataTable?.isSuccess])
   return {onChangeType, selectType, dataTable}
 }
 export default PartnershipHandler
