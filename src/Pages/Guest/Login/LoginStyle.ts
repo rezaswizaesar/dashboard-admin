@@ -4,6 +4,7 @@ const LoginStyle = styled.div`
   background-color: #172b4d;
   display: block;
   position: relative;
+  height: 100vh;
   color: #fff;
   .login{
     background: linear-gradient(87deg ,#f5365c ,#f56036);
