@@ -15,7 +15,7 @@ const AuthLayout: React.FC<AuthLayoutProps> = (route) => {
     const { getConfigAuth, getProfile } = AuthLayoutHandler();
     React.useEffect(() => {
         getConfigAuth({
-            url: '/auth/config',
+            url: '/auth/config?appName=dashboard',
             token: true,
             method: 'GET'
         });
