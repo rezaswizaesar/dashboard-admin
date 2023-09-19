@@ -1,14 +1,15 @@
 import { Form } from 'antd';
-import React, { useContext } from 'react'
+import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import createAxiosInstance from '../../../Service/FetchApi';
-import { FormLoginType } from '../../../types/LoginType';
-import { AppContext } from '../../../Store/Context/AppContext';
 import { useLocalStorage } from '../../../Hooks/useLocalStorage';
+import createAxiosInstance from '../../../Service/FetchApi';
+import { login } from '../../../Store/Context/MyAction';
+import { AppContext } from '../../../Store/Context/MyContext';
+import { FormLoginType } from '../../../types/LoginType';
 
 
 const LoginHandler = () => {
-  const { setUser } = useContext(AppContext)
+  const { dispatch } = useContext(AppContext);
   const { setItem } = useLocalStorage()
   const navigate = useNavigate();
   const [form] = Form.useForm();
@@ -25,15 +26,7 @@ const LoginHandler = () => {
     if (responseSubmit.isSuccess && responseSubmit.data) {
       const { user, token } = responseSubmit.data.data
       setItem("token", token)
-      setUser({
-        authentication: true,
-        location: user.locationUser,
-        email: user.email,
-        jwToken: token,
-        locationArea: user.locationArea,
-        approver: user.email,
-        type: user.typeUser,
-      })
+      dispatch(login(user))
       navigate('/checkin')
     }
   }, [responseSubmit.isSuccess, responseSubmit.data])
