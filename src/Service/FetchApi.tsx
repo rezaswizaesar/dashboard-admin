@@ -2,7 +2,7 @@ import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
 import { useState } from 'react';
 import ApiResponse from '../types/FetchApiType';
 interface AxiosRequestConfigOption extends AxiosRequestConfig {
-    token: boolean; // Assuming you want to add a property "token" of type boolean
+    token: boolean; // Assuming want to add a property "token" of type boolean
 }
 const createAxiosInstance = (): {
     serviceApi: (options: AxiosRequestConfigOption) => Promise<void>;
@@ -35,10 +35,16 @@ const createAxiosInstance = (): {
                 Authorization: 'Bearer ' + localStorage.getItem('token')
             };
         }
+        setApiResponse({
+            isSuccess: false,
+            data: null,
+            error: null,
+            isLoading: false,
+            isError: false
+        });
         const instance: AxiosInstance = axios.create(config);
         try {
             const response: AxiosResponse = await instance(options);
-
             setApiResponse({
                 isSuccess: true,
                 data: response.data,

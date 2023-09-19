@@ -5,6 +5,8 @@ import createAxiosInstance from "../../Service/FetchApi";
 const AuthLayoutHandler = ()=>{
   // const navigate = useNavigate()
   const { serviceApi: getConfigAuth, apiResponse: responseConfigAuth} = createAxiosInstance();
+  const { serviceApi: getProfile, apiResponse: profileResponse} = createAxiosInstance();
+  
   React.useEffect(()=>{
     if(responseConfigAuth.isError ){
       console.log("error")
@@ -15,6 +17,7 @@ const AuthLayoutHandler = ()=>{
       // navigate("/")
     }
   }, [responseConfigAuth.isError])
-  return {getConfigAuth, responseConfigAuth}
+  
+  return {getConfigAuth, responseConfigAuth, getProfile}
 }
 export default AuthLayoutHandler;

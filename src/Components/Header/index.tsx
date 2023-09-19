@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import HeaderStyle from './HeaderStyle';
 interface IHeaderProps {
-    label: string | null;
+    label: ReactNode;
 }
 const Header: React.FC<IHeaderProps> = ({ label }) => {
     return (

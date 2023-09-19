@@ -13,11 +13,13 @@ const HeaderStyle = styled.header`
     justify-content: space-between;
     .header{
         &-title{
-            color: #fff;
             font-size: 14px;
             margin:0;
             text-transform: uppercase;
             font-weight: 400;
+            a{
+                color: #fff;
+            }
         }
     }
 `

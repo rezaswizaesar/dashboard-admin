@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from '../Header';
 import Sidebar from '../Sidebar';
@@ -7,11 +7,12 @@ import LayoutStyle from './LayoutStyle';
 interface AuthLayoutProps {
     sidebar: boolean;
     header: boolean;
-    label: string | null;
+    label: ReactNode;
+    children: any;
 }
 const AuthLayout: React.FC<AuthLayoutProps> = (route) => {
     const { header, sidebar, label } = route;
-    const { getConfigAuth } = AuthLayoutHandler();
+    const { getConfigAuth, getProfile } = AuthLayoutHandler();
     React.useEffect(() => {
         getConfigAuth({
             url: '/auth/config',
@@ -19,6 +20,14 @@ const AuthLayout: React.FC<AuthLayoutProps> = (route) => {
             method: 'GET'
         });
     }, []);
+    React.useEffect(() => {
+        getProfile({
+            url: '/auth/me',
+            method: 'GET',
+            token: true
+        });
+    }, []);
+
     return (
         <LayoutStyle>
             {header && <Header label={label} />}
