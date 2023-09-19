@@ -3,8 +3,10 @@ import React from 'react';
 import PartnershipHandler from './PartnershipHandler';
 import PartnershipPageStyle from './PartnershipPage.style';
 import PartnershipTable from './PartnershipTable';
+import Loading from '../../../../components/Loading';
+
 const PartnershipPage: React.FC = () => {
-    const { onChangeType, dataTable } = PartnershipHandler();
+    const { isLoading, onChangeType, dataTable } = PartnershipHandler();
     return (
         <PartnershipPageStyle>
             <Row gutter={24}>
@@ -29,7 +31,11 @@ const PartnershipPage: React.FC = () => {
                     </Form.Item>
                 </Col>
             </Row>
-            <PartnershipTable dataTable={dataTable} />
+            {/* <Loading/> */}
+            {
+                isLoading ? <Loading/> : <PartnershipTable dataTable={dataTable} />
+            }
+            
         </PartnershipPageStyle>
     );
 };
