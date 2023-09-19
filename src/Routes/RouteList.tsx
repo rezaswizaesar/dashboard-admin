@@ -11,7 +11,7 @@ const Routelist: RouteType[] = [
         sidebar: false,
         header: false,
         component: <LoginPage />,
-        path: '/',
+        path: '/login',
         children: [],
         routeType: 'guest',
         role: [],
@@ -22,12 +22,12 @@ const Routelist: RouteType[] = [
         )
     },
     {
-        label: <Link to="/checkin">Check-in</Link>,
+        label: <Link to="/">Check-in</Link>,
         icon: null,
         sidebar: true,
         header: true,
         component: <Checkin />,
-        path: '/checkin',
+        path: '/',
         routeType: 'auth',
         role: [],
         layout: (

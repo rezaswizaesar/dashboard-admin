@@ -1,6 +1,6 @@
 import { FormEvent, useContext, useRef } from "react";
-import { removeData, setData, updateData } from "../../../Store/Context/MyAction";
-import { AppContext } from "../../../Store/Context/MyContext";
+import { removeData, setData, updateData } from "../../../Store/Context/Action";
+import { AppContext } from "../../../Store/Context/Context";
 
 const Checkin: React.FC = () => {
     const { state, dispatch } = useContext(AppContext);

@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import AuthLayout from '../Components/Layout/authLayout';
 import GuestLayout from '../Components/Layout/GuestLayout';
 import Routelist from './RouteList';
+import RequiredAuth from '../Pages/Auth/RequiredAuth';
 const RouteLayout: React.FC = () => {
     return (
         <Routes>
@@ -14,7 +15,7 @@ const RouteLayout: React.FC = () => {
                                 <GuestLayout {...route} />
                             ) : (
                                 route.children.length < 1 && (
-                                    <AuthLayout {...route} />
+                                    <RequiredAuth><AuthLayout {...route} /></RequiredAuth>
                                 )
                             )
                         }

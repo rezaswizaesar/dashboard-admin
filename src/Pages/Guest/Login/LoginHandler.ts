@@ -3,8 +3,8 @@ import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLocalStorage } from '../../../Hooks/useLocalStorage';
 import createAxiosInstance from '../../../Service/FetchApi';
-import { login } from '../../../Store/Context/MyAction';
-import { AppContext } from '../../../Store/Context/MyContext';
+import { login } from '../../../Store/Context/Action';
+import { AppContext } from '../../../Store/Context/Context';
 import { FormLoginType } from '../../../types/LoginType';
 
 
@@ -27,7 +27,7 @@ const LoginHandler = () => {
       const { user, token } = responseSubmit.data.data
       setItem("token", token)
       dispatch(login(user))
-      navigate('/checkin')
+      navigate('/')
     }
   }, [responseSubmit.isSuccess, responseSubmit.data])
   return { onSubmit, responseSubmit, form }

@@ -1,4 +1,5 @@
-import { ICounterAction, IStateItem, ICounterState } from "./MyContext";
+import { ICounterAction, ICounterState, IStateItem } from "../../types/ContextType";
+
 
 export const login = (data: ICounterState): ICounterAction => ({
   type: "LOGIN",
