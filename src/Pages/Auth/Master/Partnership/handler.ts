@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { usePartnershipService } from '../../../../service/partnership';
-import { PartnershipServiceError, TypePartnershipResp } from '@/types/Partnership';
+import { usePartnershipService } from '../../../../service/Partnership';
+import { PartnershipServiceError, TypePartnershipResp } from '../../../../types/Partnership';
 
 const usePartnershipHandler = () => {
     const [selectType, setSelectType] = useState("");

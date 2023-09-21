@@ -5,6 +5,7 @@ import TablePartnership from '../../../../components/Partnership/Table';
 import Loading from '../../../../components/Loading';
 import ModalDetailPartnership from '../../../../components/Partnership/ModalDetail';
 import { useEffect } from 'react';
+import React from 'react';
 
 const PartnershipPage = () => {
     const { selectType, isLoading, dataTable, showModal, selectedData, onChangeType, openDetail, closeDetail, isSuccess } = usePartnershipHandler();

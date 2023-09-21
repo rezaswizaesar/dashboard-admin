@@ -1,4 +1,4 @@
-import { TypePartnershipParameter, PartnershipService, TypePartnershipResp, PartnershipServiceError } from "@/types/Partnership";
+import { PartnershipService, PartnershipServiceError, TypePartnershipParameter, TypePartnershipResp } from "../types/Partnership";
 import { axiosFetch } from "./AxiosFetch";
 
 export const getPartnership = async ({partnershipType}: TypePartnershipParameter) => {
