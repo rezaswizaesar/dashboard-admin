@@ -67,7 +67,7 @@ const Routelist: RouteType[] = [
                 )
             },
             {
-                label: <Link to="/master/partnership">Partership</Link>,
+                label: <Link to="/master/partnership">Partnership</Link>,
                 icon: null,
                 sidebar: true,
                 header: true,

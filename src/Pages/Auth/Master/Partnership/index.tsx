@@ -1,16 +1,28 @@
-import { Row, Col, Form, Select } from 'antd';
-import React from 'react';
-import PartnershipHandler from './PartnershipHandler';
-import PartnershipPageStyle from './PartnershipPage.style';
-import PartnershipTable from './PartnershipTable';
-const PartnershipPage: React.FC = () => {
-    const { onChangeType, dataTable } = PartnershipHandler();
+import { Row, Col, Form, Select, message } from 'antd';
+import usePartnershipHandler from './handler';
+import PartnershipPageStyle from './styles';
+import TablePartnership from '../../../../components/Partnership/Table';
+import Loading from '../../../../components/Loading';
+import ModalDetailPartnership from '../../../../components/Partnership/ModalDetail';
+import { useEffect } from 'react';
+
+const PartnershipPage = () => {
+    const { selectType, isLoading, dataTable, showModal, selectedData, onChangeType, openDetail, closeDetail, isSuccess } = usePartnershipHandler();
+    
+    useEffect(() => {
+        if(!isSuccess){
+            message.warning("error fetching data !");
+        }
+    }, [isSuccess])
+    
     return (
         <PartnershipPageStyle>
             <Row gutter={24}>
                 <Col span={4}>
                     <Form.Item wrapperCol={{ span: 24 }} label="Type">
                         <Select
+                            value={selectType === ''? null : selectType}
+                            placeholder="Select Partnership Type"
                             onChange={onChangeType}
                             options={[
                                 {
@@ -29,7 +41,14 @@ const PartnershipPage: React.FC = () => {
                     </Form.Item>
                 </Col>
             </Row>
-            <PartnershipTable dataTable={dataTable} />
+            {
+                isLoading ? <Loading/> : <TablePartnership dataTable={dataTable} showDetail={openDetail} />
+            }  
+            <ModalDetailPartnership
+               selectedData={selectedData}
+               showModal={showModal}
+               closeModal={closeDetail}
+            />
         </PartnershipPageStyle>
     );
 };
