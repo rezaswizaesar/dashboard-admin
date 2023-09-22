@@ -1,5 +1,4 @@
-import { AxiosRequestConfig, AxiosResponse } from "axios";
-import Axios from "./Axios";
+import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
 
 interface AxiosRequestConfigOption extends AxiosRequestConfig {
     token: boolean; // Assuming want to add a property "token" of type boolean
@@ -15,11 +14,15 @@ export const axiosFetch = async (options: AxiosRequestConfigOption
         }
     };
     if (options.token) {
+        console.log("masuk ke sin")
         config.headers = {
             ...config.headers,
             Authorization: 'Bearer ' + localStorage.getItem('token')
         };
     }
-    const response: AxiosResponse = await Axios(options);
+    console.log("options", options)
+    const instance: AxiosInstance = axios.create(config);
+    const response: AxiosResponse = await instance(options);
+    // const response: AxiosResponse = await Axios(options);
     return response;
 };

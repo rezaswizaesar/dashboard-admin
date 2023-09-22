@@ -1,28 +1,37 @@
 import { Row, Col, Form, Select, message } from 'antd';
 import usePartnershipHandler from './handler';
 import PartnershipPageStyle from './styles';
-import TablePartnership from '../../../../components/Partnership/Table';
-import Loading from '../../../../components/Loading';
-import ModalDetailPartnership from '../../../../components/Partnership/ModalDetail';
 import { useEffect } from 'react';
-import React from 'react';
+import ModalDetailPartnership from '../../../../Components/Partnership/ModalDetail';
+import TablePartnership from '../../../../Components/Partnership/Table';
+import Loading from '../../../../Components/Loading';
 
 const PartnershipPage = () => {
-    const { selectType, isLoading, dataTable, showModal, selectedData, onChangeType, openDetail, closeDetail, isSuccess } = usePartnershipHandler();
-    
+    const {
+        selectType,
+        isLoading,
+        dataTable,
+        showModal,
+        selectedData,
+        onChangeType,
+        openDetail,
+        closeDetail,
+        isSuccess
+    } = usePartnershipHandler();
+
     useEffect(() => {
-        if(!isSuccess){
-            message.warning("error fetching data !");
+        if (!isSuccess) {
+            message.warning('error fetching data !');
         }
-    }, [isSuccess])
-    
+    }, [isSuccess]);
+
     return (
         <PartnershipPageStyle>
             <Row gutter={24}>
                 <Col span={4}>
                     <Form.Item wrapperCol={{ span: 24 }} label="Type">
                         <Select
-                            value={selectType === ''? null : selectType}
+                            value={selectType === '' ? null : selectType}
                             placeholder="Select Partnership Type"
                             onChange={onChangeType}
                             options={[
@@ -42,13 +51,18 @@ const PartnershipPage = () => {
                     </Form.Item>
                 </Col>
             </Row>
-            {
-                isLoading ? <Loading/> : <TablePartnership dataTable={dataTable} showDetail={openDetail} />
-            }  
+            {isLoading ? (
+                <Loading />
+            ) : (
+                <TablePartnership
+                    dataTable={dataTable}
+                    showDetail={openDetail}
+                />
+            )}
             <ModalDetailPartnership
-               selectedData={selectedData}
-               showModal={showModal}
-               closeModal={closeDetail}
+                selectedData={selectedData}
+                showModal={showModal}
+                closeModal={closeDetail}
             />
         </PartnershipPageStyle>
     );
