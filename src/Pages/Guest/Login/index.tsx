@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Container } from '../../../Helper/ContainerStyle';
 import LoginStyle from './LoginStyle';
 import FitHubLogo from '../../../assets/images/fithub-tp.png';
 import packageJson from '../../../../package.json';
 import FormCard from './component/FormCard';
 import { Col, Row } from 'antd';
+import { AppContext } from '../../../Config/Context';
+import { Navigate } from 'react-router-dom';
 
 const LoginPage: React.FC = () => {
+    const { state } = useContext(AppContext)
+
+    if (state.authenticated) {
+        console.log("masuk sini", state)
+        return <Navigate to="/" replace />
+    }
     return (
         <LoginStyle>
             <div className="login">

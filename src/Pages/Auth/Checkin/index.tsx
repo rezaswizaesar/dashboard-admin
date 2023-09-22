@@ -1,10 +1,8 @@
-import { useContext } from "react";
-import { AuthContext } from "../../../Context/AuthContext";
+import useCheckinHandler from "./handler";
 
 const Checkin: React.FC = () => {
-    const { user } = useContext(AuthContext)
-
-    console.log("context =>  ", user)
+    const { state } = useCheckinHandler()
+    console.log('state => ', state)
     return <div>Checkin</div>;
 };
 export default Checkin;
