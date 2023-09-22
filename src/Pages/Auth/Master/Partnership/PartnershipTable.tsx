@@ -32,6 +32,12 @@ const columnsPartnershipTable: ColumnsType<DataTablePartnershipType> = [
 
 const PartnershipTable: React.FC<PartnershipTableProps> = (props) => {
     const { dataTable } = props;
-    return <Table columns={columnsPartnershipTable} dataSource={dataTable} />;
+    return (
+        <Table
+            id="data-partnership"
+            columns={columnsPartnershipTable}
+            dataSource={dataTable}
+        />
+    );
 };
 export default PartnershipTable;

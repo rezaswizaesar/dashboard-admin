@@ -3,7 +3,7 @@ import createAxiosInstance from '../../../../Service/FetchApi';
 
 const PartnershipHandler = ()=>{
   const [selectType, setSelectType] = React.useState<string>("")
-  const [dataTable, setDataTable] = React.useState<any>([])
+  const [dataTable, setDataTable] = React.useState<[]>([])
   const { serviceApi, apiResponse: responseDataTable } = createAxiosInstance();
   const onChangeType = React.useCallback((value: string) => {
     serviceApi({
@@ -28,6 +28,6 @@ const PartnershipHandler = ()=>{
       setDataTable(setKey)
     }
   }, [responseDataTable?.isSuccess])
-  return {onChangeType, selectType, dataTable}
+  return {onChangeType, dataTable, selectType}
 }
 export default PartnershipHandler
