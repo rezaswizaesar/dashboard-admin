@@ -34,7 +34,7 @@ const LoginHandler = () => {
         approver: user.email,
         type: user.typeUser,
       })
-      navigate('/checkin')
+      navigate('/')
     }
   }, [responseSubmit.isSuccess, responseSubmit.data])
   return { onSubmit, responseSubmit, form }
