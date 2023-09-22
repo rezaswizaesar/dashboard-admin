@@ -1,10 +1,10 @@
 import { createContext, useReducer } from "react";
-import { IContextModel, ICounterState, UserProvideProps } from "../../types/Context";
+import { IContextModel, IContextState, UserProvideProps } from "../../types/Context";
 import AppReducer from "../Reducer";
 
 // import AppReducer from "./Reducer";
 
-const defaultState: ICounterState = {
+const defaultState: IContextState = {
   authenticated: false,
   email: "",
   locationUser: "",

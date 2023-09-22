@@ -3,11 +3,14 @@ import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom';
 import createAxiosInstance from '../../../Service/FetchApi';
 import { FormLoginType } from '../../../types/LoginType';
-import { AuthContext } from '../../../Context/AuthContext';
+import { AppContext } from '../../../Config/Context';
+import { login } from '../../../Config/Action';
+import { useLocalStorage } from '../../../Helper/Hooks/useLocalStorage';
 
 
 const LoginHandler = () => {
-  const { setUser } = useContext(AuthContext)
+  const { dispatch } = useContext(AppContext);
+  const { setItem } = useLocalStorage()
   const navigate = useNavigate();
   const [form] = Form.useForm();
   const { serviceApi, apiResponse: responseSubmit } = createAxiosInstance();
@@ -24,16 +27,8 @@ const LoginHandler = () => {
     if (responseSubmit.isSuccess && responseSubmit.data) {
       localStorage.setItem("token", responseSubmit.data.data.token)
       const { token, user } = responseSubmit.data.data
-      console.log('token => ', token)
-      setUser({
-        authentication: true,
-        location: user.locationUser,
-        email: user.email,
-        jwToken: token,
-        locationArea: user.locationArea,
-        approver: user.email,
-        type: user.typeUser,
-      })
+      dispatch(login(user))
+      setItem("token", token)
       navigate('/')
     }
   }, [responseSubmit.isSuccess, responseSubmit.data])
