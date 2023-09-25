@@ -11,6 +11,21 @@ const HeaderStyle = styled.header`
     top: 0;
     display: flex;
     justify-content: space-between;
+    .header-menu {
+        .logout-button {
+            color: #ebebeb;
+            font-size: 14px;
+            cursor: pointer;
+            font-size:14px;
+            font-weight: 500;
+            
+            &:hover {
+                color: #dbd7d7;
+            }
+        }
+        
+    }
+    
     .header{
         &-title{
             font-size: 14px;
