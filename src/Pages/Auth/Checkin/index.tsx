@@ -10,6 +10,7 @@ const Checkin: React.FC = () => {
             <Select
                 labelInValue
                 placeholder="Select a Location"
+                defaultValue={state.locationUser}
                 style={{ width: 300 }}
                 options={locationList?.map((item) => {
                     return ({ label: item.name, value: item.name })
