@@ -1,15 +1,24 @@
 import { LogoutOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
-import { Button, Dropdown } from 'antd';
+import { Button, Dropdown, message } from 'antd';
 import { FC, useContext } from 'react';
+import { logout } from '../../Config/Action';
 import { AppContext } from '../../Config/Context';
+import { useLocalStorage } from '../../Helper/Hooks/useLocalStorage';
 import { IHeaderProps } from '../../types/Header';
 import HeaderStyle from './HeaderStyle';
 
 
 const Header: FC<IHeaderProps> = ({ label }) => {
-    const { state } = useContext(AppContext);
+    const { state, dispatch } = useContext(AppContext);
+    const { clearItem } = useLocalStorage()
 
+    const handleLogout = () => {
+        dispatch(logout())
+        clearItem()
+        message.success("Successfully Logged Out!")
+
+    }
 
     const items: MenuProps['items'] = [
         {
@@ -19,7 +28,7 @@ const Header: FC<IHeaderProps> = ({ label }) => {
             children: [
                 {
                     label: (
-                        <Button type="link" style={{ color: '#555' }}>
+                        <Button type="link" style={{ color: '#555' }} onClick={handleLogout}>
                             <LogoutOutlined /> Logout
                         </Button>
                     ),
