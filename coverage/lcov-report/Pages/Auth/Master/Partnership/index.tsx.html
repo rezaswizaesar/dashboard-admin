@@ -39,7 +39,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
@@ -139,26 +139,13 @@
 <a name='L74'></a><a href='#L74'>74</a>
 <a name='L75'></a><a href='#L75'>75</a>
 <a name='L76'></a><a href='#L76'>76</a>
-<a name='L77'></a><a href='#L77'>77</a>
-<a name='L78'></a><a href='#L78'>78</a>
-<a name='L79'></a><a href='#L79'>79</a>
-<a name='L80'></a><a href='#L80'>80</a>
-<a name='L81'></a><a href='#L81'>81</a>
-<a name='L82'></a><a href='#L82'>82</a>
-<a name='L83'></a><a href='#L83'>83</a>
-<a name='L84'></a><a href='#L84'>84</a>
-<a name='L85'></a><a href='#L85'>85</a>
-<a name='L86'></a><a href='#L86'>86</a>
-<a name='L87'></a><a href='#L87'>87</a>
-<a name='L88'></a><a href='#L88'>88</a>
-<a name='L89'></a><a href='#L89'>89</a>
-<a name='L90'></a><a href='#L90'>90</a>
-<a name='L91'></a><a href='#L91'>91</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L77'></a><a href='#L77'>77</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -177,30 +164,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -255,10 +227,11 @@ import { useEffect } from 'react';
 import ModalDetailPartnership from '../../../../Components/Partnership/ModalDetail';
 import TablePartnership from '../../../../Components/Partnership/Table';
 import Loading from '../../../../Components/Loading';
+import SelectCostume from '../../../../Components/Form/Select';
 &nbsp;
-const PartnershipPage = () =&gt; {
+const PartnershipPage: React.FC = () =&gt; {
     const {
-        selectType,
+        // selectType,
         isLoading,
         dataTable,
         showModal,
@@ -280,21 +253,10 @@ const PartnershipPage = () =&gt; {
             &lt;Row gutter={24}&gt;
                 &lt;Col span={4}&gt;
                     &lt;Form.Item wrapperCol={{ span: 24 }} label="Type"&gt;
-                        &lt;select
-                            value={selectType}
-                            onChange={(e) =&gt; onChangeType(e.target.value)}
-                            name=""
-                            data-testid="select-type"&gt;
-                            &lt;option value="OWNERSHIP"&gt;Ownership&lt;/option&gt;
-                            &lt;option value="CORPORATE MEMBERSHIP"&gt;
-                                Corporate Membership
-                            &lt;/option&gt;
-                        &lt;/select&gt;
-                        {/* &lt;Select
-                            value={selectType === '' ? null : selectType}
-                            data-testid="select-type-partnership"
-                            placeholder="Select Partnership Type"
+                        &lt;SelectCostume
                             onChange={onChangeType}
+                            name=""
+                            dataTestId="select-type"
                             options={[
                                 {
                                     label: 'Ownership',
@@ -303,21 +265,17 @@ const PartnershipPage = () =&gt; {
                                 {
                                     label: 'Corporate Membership',
                                     value: 'CORPORATE MEMBERSHIP'
-                                },
-                                {
-                                    label: 'Collaboration',
-                                    value: 'COLLABORATION'
                                 }
-                            ]}&gt;&lt;/Select&gt; */}
+                            ]}&gt;&lt;/SelectCostume&gt;
                     &lt;/Form.Item&gt;
                 &lt;/Col&gt;
             &lt;/Row&gt;
             {isLoading ? (
-<span class="branch-0 cbranch-no" title="branch not covered" >                &lt;div data-testid="loading-table-partnership"&gt;</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >                &lt;div role="loading-table-partnership"&gt;</span>
                     &lt;Loading /&gt;
                 &lt;/div&gt;
             ) : (
-                &lt;div data-testid="table-showing"&gt;
+                &lt;div role="table-showing"&gt;
                     &lt;TablePartnership
                         dataTable={dataTable}
                         showDetail={openDetail}
@@ -340,7 +298,7 @@ export default PartnershipPage;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-25T07:30:23.332Z
+                at 2023-09-26T07:08:20.488Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
