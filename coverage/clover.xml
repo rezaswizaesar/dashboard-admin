@@ -1,88 +1,146 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1695357063177" clover="3.2.0">
-  <project timestamp="1695357063177" name="All files">
-    <metrics statements="83" coveredstatements="50" conditionals="43" coveredconditionals="23" methods="15" coveredmethods="6" elements="141" coveredelements="79" complexity="0" loc="83" ncloc="83" packages="5" files="8" classes="8"/>
-    <package name="Components.Loading">
-      <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="index.tsx" path="/Users/swizaesarrezaryann/project/fithub-revamp/dashboard-vite/src/Components/Loading/index.tsx">
-        <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+<coverage generated="1695717438549" clover="3.2.0">
+  <project timestamp="1695717438549" name="All files">
+    <metrics statements="118" coveredstatements="106" conditionals="48" coveredconditionals="27" methods="26" coveredmethods="21" elements="192" coveredelements="154" complexity="0" loc="118" ncloc="118" packages="8" files="13" classes="13"/>
+    <package name="src">
+      <metrics statements="13" coveredstatements="13" conditionals="1" coveredconditionals="1" methods="6" coveredmethods="5"/>
+      <file name="test-utils.tsx" path="/Users/swizaesarrezaryann/project/fithub-revamp/dashboard-vite/src/test-utils.tsx">
+        <metrics statements="13" coveredstatements="13" conditionals="1" coveredconditionals="1" methods="6" coveredmethods="5"/>
         <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
-        <line num="4" count="0" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="10" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="Components.Partnership">
-      <metrics statements="13" coveredstatements="10" conditionals="35" coveredconditionals="21" methods="4" coveredmethods="2"/>
+    <package name="src.Components.Form.Select">
+      <metrics statements="11" coveredstatements="11" conditionals="4" coveredconditionals="0" methods="4" coveredmethods="3"/>
+      <file name="Select.style.ts" path="/Users/swizaesarrezaryann/project/fithub-revamp/dashboard-vite/src/Components/Form/Select/Select.style.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+      </file>
+      <file name="index.tsx" path="/Users/swizaesarrezaryann/project/fithub-revamp/dashboard-vite/src/Components/Form/Select/index.tsx">
+        <metrics statements="8" coveredstatements="8" conditionals="4" coveredconditionals="0" methods="4" coveredmethods="3"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="18" count="4" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="22" count="4" type="stmt"/>
+        <line num="25" count="8" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.Components.Loading">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="index.tsx" path="/Users/swizaesarrezaryann/project/fithub-revamp/dashboard-vite/src/Components/Loading/index.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.Components.Partnership">
+      <metrics statements="13" coveredstatements="11" conditionals="35" coveredconditionals="21" methods="4" coveredmethods="3"/>
       <file name="ModalDetail.tsx" path="/Users/swizaesarrezaryann/project/fithub-revamp/dashboard-vite/src/Components/Partnership/ModalDetail.tsx">
         <metrics statements="5" coveredstatements="5" conditionals="35" coveredconditionals="21" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
-        <line num="5" count="2" type="stmt"/>
-        <line num="7" count="2" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
+        <line num="7" count="4" type="stmt"/>
         <line num="83" count="1" type="stmt"/>
       </file>
       <file name="Table.tsx" path="/Users/swizaesarrezaryann/project/fithub-revamp/dashboard-vite/src/Components/Partnership/Table.tsx">
-        <metrics statements="8" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+        <metrics statements="8" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
-        <line num="13" count="2" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
         <line num="23" count="0" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
-        <line num="46" count="2" type="stmt"/>
-        <line num="49" count="1" type="stmt"/>
+        <line num="46" count="3" type="stmt"/>
+        <line num="55" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="Pages.Auth.Master.Partnership">
-      <metrics statements="45" coveredstatements="31" conditionals="7" coveredconditionals="2" methods="6" coveredmethods="3"/>
+    <package name="src.Mock">
+      <metrics statements="11" coveredstatements="9" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <file name="MockHandler.tsx" path="/Users/swizaesarrezaryann/project/fithub-revamp/dashboard-vite/src/Mock/MockHandler.tsx">
+        <metrics statements="8" coveredstatements="6" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="30" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="55" count="1" type="stmt"/>
+      </file>
+      <file name="MockHttpServer.ts" path="/Users/swizaesarrezaryann/project/fithub-revamp/dashboard-vite/src/Mock/MockHttpServer.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.Pages.Auth.Master.Partnership">
+      <metrics statements="44" coveredstatements="38" conditionals="5" coveredconditionals="3" methods="6" coveredmethods="4"/>
       <file name="handler.ts" path="/Users/swizaesarrezaryann/project/fithub-revamp/dashboard-vite/src/Pages/Auth/Master/Partnership/handler.ts">
-        <metrics statements="28" coveredstatements="15" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="1"/>
+        <metrics statements="26" coveredstatements="21" conditionals="2" coveredconditionals="1" methods="4" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
-        <line num="6" count="2" type="stmt"/>
-        <line num="7" count="2" type="stmt"/>
-        <line num="8" count="2" type="stmt"/>
-        <line num="9" count="2" type="stmt"/>
-        <line num="10" count="2" type="stmt"/>
-        <line num="11" count="2" type="stmt"/>
-        <line num="12" count="2" type="stmt"/>
-        <line num="14" count="2" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="21" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="22" count="0" type="stmt"/>
+        <line num="6" count="8" type="stmt"/>
+        <line num="7" count="8" type="stmt"/>
+        <line num="8" count="8" type="stmt"/>
+        <line num="9" count="8" type="stmt"/>
+        <line num="10" count="8" type="stmt"/>
+        <line num="11" count="8" type="stmt"/>
+        <line num="12" count="8" type="stmt"/>
+        <line num="14" count="8" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="20" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="22" count="2" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
-        <line num="30" count="2" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="29" count="8" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
         <line num="31" count="0" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
-        <line num="35" count="2" type="stmt"/>
+        <line num="34" count="8" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
         <line num="36" count="0" type="stmt"/>
-        <line num="37" count="0" type="stmt"/>
-        <line num="40" count="2" type="stmt"/>
-        <line num="43" count="1" type="stmt"/>
+        <line num="39" count="8" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
       </file>
       <file name="index.tsx" path="/Users/swizaesarrezaryann/project/fithub-revamp/dashboard-vite/src/Pages/Auth/Master/Partnership/index.tsx">
-        <metrics statements="14" coveredstatements="13" conditionals="5" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <metrics statements="15" coveredstatements="14" conditionals="3" coveredconditionals="2" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
-        <line num="20" count="2" type="stmt"/>
-        <line num="22" count="2" type="stmt"/>
-        <line num="23" count="2" type="cond" truecount="0" falsecount="1"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="28" count="2" type="stmt"/>
-        <line num="70" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="26" count="4" type="stmt"/>
+        <line num="28" count="4" type="stmt"/>
+        <line num="29" count="2" type="cond" truecount="0" falsecount="1"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="34" count="4" type="stmt"/>
+        <line num="76" count="1" type="stmt"/>
       </file>
       <file name="styles.ts" path="/Users/swizaesarrezaryann/project/fithub-revamp/dashboard-vite/src/Pages/Auth/Master/Partnership/styles.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -91,37 +149,38 @@
         <line num="10" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="Service">
-      <metrics statements="10" coveredstatements="2" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+    <package name="src.Service">
+      <metrics statements="11" coveredstatements="11" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
       <file name="AxiosFetch.ts" path="/Users/swizaesarrezaryann/project/fithub-revamp/dashboard-vite/src/Service/AxiosFetch.ts">
-        <metrics statements="10" coveredstatements="2" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <metrics statements="11" coveredstatements="11" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="16" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="17" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
       </file>
     </package>
-    <package name="Service.Master">
-      <metrics statements="11" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+    <package name="src.Service.Master">
+      <metrics statements="11" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
       <file name="Partnership.ts" path="/Users/swizaesarrezaryann/project/fithub-revamp/dashboard-vite/src/Service/Master/Partnership.ts">
-        <metrics statements="11" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+        <metrics statements="11" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
         <line num="2" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
         <line num="32" count="0" type="stmt"/>
         <line num="33" count="0" type="stmt"/>
         <line num="39" count="1" type="stmt"/>
-        <line num="40" count="2" type="stmt"/>
+        <line num="40" count="8" type="stmt"/>
       </file>
     </package>
   </project>

@@ -1,8 +1,9 @@
-import { fireEvent, render } from '@testing-library/react';
-import PartnershipPage from '.';
-// import PartnershipTable from './PartnershipTable';
-// import '@testing-library/jest-dom/extend-expect';
-describe('PartnershipHandler', () => {
+import { render, fireEvent, screen } from '../../../../test-utils';
+import PartnershipPage from './index';
+import { renderHook, act } from '@testing-library/react-hooks';
+import usePartnershipHandler from './handler';
+
+describe('renders the PartnershipPage component', () => {
     beforeAll(() => {
         // https://jestjs.io/docs/manual-mocks#mocking-methods-which-are-not-implemented-in-jsdom
         window.matchMedia =
@@ -15,49 +16,50 @@ describe('PartnershipHandler', () => {
                 };
             };
     });
-    it('renders without errors', () => {
+    it('renders the component without errors', () => {
         render(<PartnershipPage />);
     });
-    it('should call onChangeType when select value changes', () => {
-        // Membuat mock untuk fungsi onChangeType
-        // const mockOnChangeType = jest.fn();
+    it('selects a partnership type from the dropdown', async () => {
+        render(<PartnershipPage />);
+        const selectElement = await screen.findByTestId('select-type');
+        expect(selectElement).toBeInTheDocument();
 
-        // Merender komponen PartnershipSelect dengan fungsi onChangeType yang telah di-mock
-        const { getByRole } = render(<PartnershipPage />);
-        const selectType = getByRole('combobox');
+        fireEvent.change(selectElement, { target: { value: 'OWNERSHIP' } });
 
-        // Mensimulasikan perubahan pada elemen input
-        fireEvent.change(selectType, {
-            target: { value: 'CORPORATE MEMBERSHIP' }
-        });
-
-        // Memastikan bahwa fungsi onChangeType telah dipanggil dengan benar
-        // expect(mockOnChangeType).toHave('CORPORATE MEMBERSHIP');
+        const tableElement = await screen.findByRole('table-showing');
+        expect(tableElement).toBeInTheDocument();
     });
-    // it('shpuld render a table with data', () => {
-    //     const data = [
-    //         {
-    //             ownAsset: false,
-    //             investmentPlan: '\u003c Rp 500 Mio',
-    //             createdDate: '2022-05-09T00:57:47.628Z',
-    //             personName: 'Kevin Kurniawan',
-    //             partnershipType: 'OWNERSHIP',
-    //             employeeNumber: null,
-    //             email: 'kevkurniawan96@gmail.com',
-    //             contactTime: 'EVENING',
-    //             phone: '(+62) 8112228854',
-    //             dialCode: '+62',
-    //             companyName: 'company name'
-    //         }
-    //     ];
-    //     const { getByText } = render(<PartnershipTable dataTable={data} />);
-    //     expect(getByText('Kevin Kurniawan ')).toBeInTheDocument();
-    //     expect(getByText('Name')).toBeInTheDocument();
-    // });
-    // it('should handle empty data', () => {
-    //     const { getByText } = render(<PartnershipTable dataTable={[]} />);
+    // it('handles error response', async () => {
+    //     server.use(
+    //         rest.get(
+    //             'https://web.svc.staging.fithubdev.com/v1/partnerships',
+    //             (_, res, ctx) => {
+    //                 return res(
+    //                     ctx.status(500),
+    //                     ctx.json({ message: 'Internal Server Error' })
+    //                 );
+    //             }
+    //         )
+    //     );
 
-    //     // Memeriksa apakah pesan "Tidak ada data" ditampilkan ketika data kosong
-    //     expect(getByText('Tidak ada data')).toBeInTheDocument();
+    //     render(<PartnershipPage />);
+    //     const warningElement = await screen.findByText('error fetching data !');
+    //     expect(warningElement).toBeInTheDocument();
     // });
+    it('usePartnershipHandler handles state changes', async () => {
+        const { result, waitForNextUpdate } = renderHook(() =>
+            usePartnershipHandler()
+        );
+
+        act(() => {
+            result.current.onChangeType('OWNERSHIP');
+        });
+        expect(result.current.isLoading).toBe(true);
+
+        await waitForNextUpdate();
+
+        expect(result.current.isLoading).toBe(false);
+        expect(result.current.dataTable.length).toBe(1);
+        expect(result.current.isSuccess).toBe(true);
+    });
 });

@@ -43,7 +43,13 @@ const TablePartnership = ({
             dataIndex: 'createdDate'
         }
     ];
-    return <Table columns={columnsPartnershipTable} dataSource={dataTable} />;
+    return (
+        <Table
+            data-testid="table-showing"
+            columns={columnsPartnershipTable}
+            dataSource={dataTable}
+        />
+    );
 };
 
 export default TablePartnership;

@@ -17,11 +17,10 @@ const usePartnershipHandler = () => {
         let response = await service.getPartnership({
             partnershipType: value
         })
-        console.log((response as PartnershipServiceError).isSuccess)
         if((response as PartnershipServiceError).isSuccess === undefined) {
+            
             setDataTable(response as TypePartnershipResp[]); 
         }else{
-            console.log('kesini', )
             setIsSuccess(false);
         }
         setIsLoading(false);
