@@ -8,7 +8,7 @@ const LoginForm = () => {
             <span className="login-section__card-top">
                 Sign in with credentials
             </span>
-            <Form onFinish={onSubmit}>
+            <Form form={form} onFinish={onSubmit}>
                 <Form.Item
                     name={'email'}
                     rules={[
