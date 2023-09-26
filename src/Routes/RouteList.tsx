@@ -3,6 +3,7 @@ import Checkin from '../Pages/Auth/Checkin';
 import PartnershipPage from '../Pages/Auth/Master/Partnership';
 import LoginPage from '../Pages/Guest/Login/index';
 import { RouteType } from '../types/RouteList.type';
+import CSTransaction from '../Pages/Auth/Transaction';
 
 const Routelist: RouteType[] = [
     {
@@ -22,12 +23,28 @@ const Routelist: RouteType[] = [
         )
     },
     {
+        label: <Link to="/transactions">CS Transaction</Link>,
+        icon: null,
+        sidebar: true,
+        header: true,
+        component: <CSTransaction />,
+        path: '/transactions',
+        routeType: 'auth',
+        role: [],
+        layout: (
+            <>
+                <Outlet></Outlet>
+            </>
+        ),
+        children: []
+    },
+    {
         label: <Link to="/">Check-in</Link>,
         icon: null,
         sidebar: true,
         header: true,
         component: <Checkin />,
-        path: '/',
+        path: '*',
         routeType: 'auth',
         role: [],
         layout: (

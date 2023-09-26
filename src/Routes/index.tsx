@@ -1,9 +1,10 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import AuthLayout from '../Components/Layout/authLayout';
+import AuthLayout from '../Components/Layout/AuthLayout';
 import GuestLayout from '../Components/Layout/GuestLayout';
-import Routelist from './RouteList';
 import Authenticated from '../Components/Authenticated';
+import Routelist from './RouteList';
+
 const RouteLayout: React.FC = () => {
     return (
         <Routes>
@@ -33,7 +34,9 @@ const RouteLayout: React.FC = () => {
                                     <Route
                                         key={i}
                                         element={
-                                            <AuthLayout {...childroute} />
+                                            <Authenticated>
+                                                <AuthLayout {...childroute} />
+                                            </Authenticated>
                                         }>
                                         <Route
                                             element={childroute.component}

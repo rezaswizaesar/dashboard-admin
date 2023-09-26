@@ -1,7 +1,8 @@
-import { ILocationRes, ILocationServiceError, LocationService } from "../../types/Checkin"
-import { axiosFetch } from "../AxiosFetch"
+import { ILocationRes, ILocationServiceError, LocationService } from "../../types/Checkin";
+import { axiosFetch } from "../AxiosFetch";
 
 export const getLocation = async () => {
+  console.log("getLocation")
   try {
     const data = await axiosFetch({
       url: "/locations",
@@ -9,9 +10,8 @@ export const getLocation = async () => {
       token: true
     })
 
-    const newValue: ILocationRes[] = data?.data.data.map((newData: ILocationRes, key: number) => {
+    const newValue: ILocationRes[] = data?.data.data.map((newData: ILocationRes) => {
       return {
-        key: key,
         id: newData.id,
         name: newData.name
       } as ILocationRes

@@ -1,10 +1,10 @@
 import { Dispatch, ReactNode } from "react";
-import { ILocationList } from "../Checkin";
+import { ILocationRes } from "../Checkin";
 
 export interface IStateItem {
   key: string
   data: any[]
-  locationList?: ILocationList
+  locationList?: ILocationRes[]
 }
 
 export interface IUser {
@@ -20,7 +20,7 @@ export interface IContextState {
   locationUser: string
   locationArea: string
   typeUser: string
-  dataApi: IStateItem[]
+  dataApi: IStateItem
 }
 
 export interface IContextModel {
