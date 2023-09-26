@@ -11,7 +11,7 @@ import { Navigate } from 'react-router-dom';
 const LoginPage: React.FC = () => {
     const { state } = useContext(AppContext)
 
-    if (state.authenticated) {
+    if (state?.authenticated) {
         console.log("masuk sini", state)
         return <Navigate to="/" replace />
     }

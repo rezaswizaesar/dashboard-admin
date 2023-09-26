@@ -1,8 +1,10 @@
 import { Dispatch, ReactNode } from "react";
+import { ILocationRes } from "../Checkin";
 
 export interface IStateItem {
-  key: string;
+  key: string
   data: any[]
+  locationList?: ILocationRes[]
 }
 
 export interface IUser {
@@ -18,7 +20,7 @@ export interface IContextState {
   locationUser: string
   locationArea: string
   typeUser: string
-  dataApi: IStateItem[]
+  dataApi: IStateItem
 }
 
 export interface IContextModel {
@@ -28,7 +30,7 @@ export interface IContextModel {
 
 export type IContextAction =
   | { type: 'LOGIN'; payload: IContextState }
-  | { type: 'LOGOUT'; payload: boolean }
+  | { type: 'LOGOUT' }
   | { type: 'ADD'; payload: IStateItem }
   | { type: 'UPDATE'; payload: IStateItem }
   | { type: 'DELETE'; payload: string };
