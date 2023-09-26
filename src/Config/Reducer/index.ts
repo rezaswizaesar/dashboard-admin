@@ -11,6 +11,7 @@ const AppReducer = (state: IContextState, action: IContextAction): IContextState
         locationUser: action.payload.locationUser,
         locationArea: action.payload.locationArea,
         typeUser: action.payload.typeUser,
+        token: action.payload.token
 
       }
 
@@ -22,6 +23,7 @@ const AppReducer = (state: IContextState, action: IContextAction): IContextState
         locationUser: "",
         locationArea: "",
         typeUser: "",
+        token: ""
       }
 
     case "ADD":
