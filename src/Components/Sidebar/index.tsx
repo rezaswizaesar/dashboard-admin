@@ -9,7 +9,7 @@ const Sidebar: React.FC = () => {
     const { NavList, handleClickSidebar, current, openKey } = SidebarHandler();
     return (
         <SidebarStyle>
-            <Link className="sidebar-top" to={'/checkin'}>
+            <Link className="sidebar-top" to={'/'}>
                 <img src={Logo} alt="Fithub" className="sidebar-top__logo" />{' '}
                 <span> Admin-Dashboard</span>
             </Link>
