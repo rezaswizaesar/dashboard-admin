@@ -1,4 +1,4 @@
-import { Form } from 'antd';
+import { Form, message } from 'antd';
 import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom';
 import createAxiosInstance from '../../../Service/FetchApi';
@@ -30,6 +30,7 @@ const LoginHandler = () => {
       dispatch(login(user))
       setItem("token", token)
       navigate('/')
+      message.success("Succesfully Logged In!")
     }
   }, [responseSubmit.isSuccess, responseSubmit.data])
   return { onSubmit, responseSubmit, form }
