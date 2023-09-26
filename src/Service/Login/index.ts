@@ -9,10 +9,7 @@ export const postLogin = async (values: IFormLogin) => {
       url: "/auth/login",
       method: 'POST',
       token: true,
-      data: {
-        email: values.email,
-        password: values.password
-      }
+      data: values
     })
 
     const { data } = response?.data
