@@ -1,4 +1,9 @@
-import { Row, Col, Form, Select, message } from 'antd';
+import {
+    Row,
+    Col,
+    Form, //Select,
+    message
+} from 'antd';
 import usePartnershipHandler from './handler';
 import PartnershipPageStyle from './styles';
 import { useEffect } from 'react';
@@ -6,7 +11,7 @@ import ModalDetailPartnership from '../../../../Components/Partnership/ModalDeta
 import TablePartnership from '../../../../Components/Partnership/Table';
 import Loading from '../../../../Components/Loading';
 
-const PartnershipPage = () => {
+const PartnershipPage: React.FC = () => {
     const {
         selectType,
         isLoading,
@@ -30,8 +35,19 @@ const PartnershipPage = () => {
             <Row gutter={24}>
                 <Col span={4}>
                     <Form.Item wrapperCol={{ span: 24 }} label="Type">
-                        <Select
+                        <select
+                            value={selectType}
+                            onChange={(e) => onChangeType(e.target.value)}
+                            name=""
+                            data-testid="select-type">
+                            <option value="OWNERSHIP">Ownership</option>
+                            <option value="CORPORATE MEMBERSHIP">
+                                Corporate Membership
+                            </option>
+                        </select>
+                        {/* <Select
                             value={selectType === '' ? null : selectType}
+                            data-testid="select-type-partnership"
                             placeholder="Select Partnership Type"
                             onChange={onChangeType}
                             options={[
@@ -47,17 +63,21 @@ const PartnershipPage = () => {
                                     label: 'Collaboration',
                                     value: 'COLLABORATION'
                                 }
-                            ]}></Select>
+                            ]}></Select> */}
                     </Form.Item>
                 </Col>
             </Row>
             {isLoading ? (
-                <Loading />
+                <div role="loading-table-partnership">
+                    <Loading />
+                </div>
             ) : (
-                <TablePartnership
-                    dataTable={dataTable}
-                    showDetail={openDetail}
-                />
+                <div role="table-showing">
+                    <TablePartnership
+                        dataTable={dataTable}
+                        showDetail={openDetail}
+                    />
+                </div>
             )}
             <ModalDetailPartnership
                 selectedData={selectedData}

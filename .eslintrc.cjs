@@ -23,5 +23,13 @@ module.exports = {
             { allowConstantExport: true }
         ],
         '@typescript-eslint/no-non-null-assertion': 'off'
-    }
+    },
+    overrides: [
+        {
+            files: ['*-test.tsx', '*.spec.tsx', '*.ts'],
+            rules: {
+                'no-unused-expressions': 'off'
+            }
+        }
+    ]
 };

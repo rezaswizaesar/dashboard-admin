@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import AuthLayout from '../Components/Layout/authLayout';
+import AuthLayout from '../Components/Layout/AuthLayout';
 import GuestLayout from '../Components/Layout/GuestLayout';
 import Routelist from './RouteList';
 const RouteLayout: React.FC = () => {

@@ -4,7 +4,7 @@
     "paths": {
       "@/src/*": ["src/*"] // Map "@/src/*" to "src/*"
     },
-    "target": "ES2022",
+    "target": "es2022",
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "CommonJS",

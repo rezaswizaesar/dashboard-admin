@@ -1,8 +1,54 @@
-import { fireEvent, render } from '@testing-library/react';
-import PartnershipPage from '.';
-// import PartnershipTable from './PartnershipTable';
-// import '@testing-library/jest-dom/extend-expect';
-describe('PartnershipHandler', () => {
+// import { render, waitFor, fireEvent } from '../../../../test-utils';
+// import PartnershipPage from '.';
+// describe('PartnershipHandler', () => {
+//     beforeAll(() => {
+//         // https://jestjs.io/docs/manual-mocks#mocking-methods-which-are-not-implemented-in-jsdom
+//         window.matchMedia =
+//             window.matchMedia ||
+//             function () {
+//                 return {
+//                     matches: false,
+//                     addListener: () => {},
+//                     removeListener: () => {}
+//                 };
+//             };
+//     });
+//     it('renders without errors', () => {
+//         render(<PartnershipPage />);
+//     });
+//     it('form select type', async () => {
+//         const { getByTestId } = render(<PartnershipPage />);
+//         const selectElement = getByTestId('select-type');
+
+//         fireEvent.change(selectElement, {
+//             target: { value: 'OWNERSHIP' }
+//         });
+//         await waitFor(() => {
+//             expect(selectElement).toHaveValue('OWNERSHIP');
+//         });
+//     });
+// });
+import { render, fireEvent, waitFor } from '../../../../test-utils';
+import PartnershipPage from './index';
+import '@testing-library/jest-dom';
+
+// Mock the usePartnershipHandler hook
+jest.mock('./handler', () => ({
+    __esModule: true,
+    default: () => ({
+        selectType: '',
+        isLoading: false,
+        dataTable: [],
+        showModal: false,
+        selectedData: null,
+        onChangeType: jest.fn(),
+        openDetail: jest.fn(),
+        closeDetail: jest.fn(),
+        isSuccess: true
+    })
+}));
+// Mock the antMessage.warning function
+describe('PartnershipPage', () => {
     beforeAll(() => {
         // https://jestjs.io/docs/manual-mocks#mocking-methods-which-are-not-implemented-in-jsdom
         window.matchMedia =
@@ -15,49 +61,40 @@ describe('PartnershipHandler', () => {
                 };
             };
     });
-    it('renders without errors', () => {
+    it('renders the component without errors', () => {
         render(<PartnershipPage />);
+        // You can add more specific assertions here based on your component's structure.
     });
-    it('should call onChangeType when select value changes', () => {
-        // Membuat mock untuk fungsi onChangeType
-        // const mockOnChangeType = jest.fn();
+    it('selects a partnership type from the dropdown', async () => {
+        const { getByTestId } = render(<PartnershipPage />);
+        const selectElement = getByTestId('select-type');
 
-        // Merender komponen PartnershipSelect dengan fungsi onChangeType yang telah di-mock
-        const { getByRole } = render(<PartnershipPage />);
-        const selectType = getByRole('combobox');
-
-        // Mensimulasikan perubahan pada elemen input
-        fireEvent.change(selectType, {
-            target: { value: 'CORPORATE MEMBERSHIP' }
+        fireEvent.change(selectElement, {
+            target: { value: 'OWNERSHIP' }
         });
-
-        // Memastikan bahwa fungsi onChangeType telah dipanggil dengan benar
-        // expect(mockOnChangeType).toHave('CORPORATE MEMBERSHIP');
+        await waitFor(() => {
+            expect(selectElement).toHaveValue('OWNERSHIP');
+        });
     });
-    // it('shpuld render a table with data', () => {
-    //     const data = [
-    //         {
-    //             ownAsset: false,
-    //             investmentPlan: '\u003c Rp 500 Mio',
-    //             createdDate: '2022-05-09T00:57:47.628Z',
-    //             personName: 'Kevin Kurniawan',
-    //             partnershipType: 'OWNERSHIP',
-    //             employeeNumber: null,
-    //             email: 'kevkurniawan96@gmail.com',
-    //             contactTime: 'EVENING',
-    //             phone: '(+62) 8112228854',
-    //             dialCode: '+62',
-    //             companyName: 'company name'
-    //         }
-    //     ];
-    //     const { getByText } = render(<PartnershipTable dataTable={data} />);
-    //     expect(getByText('Kevin Kurniawan ')).toBeInTheDocument();
-    //     expect(getByText('Name')).toBeInTheDocument();
-    // });
-    // it('should handle empty data', () => {
-    //     const { getByText } = render(<PartnershipTable dataTable={[]} />);
 
-    //     // Memeriksa apakah pesan "Tidak ada data" ditampilkan ketika data kosong
-    //     expect(getByText('Tidak ada data')).toBeInTheDocument();
-    // });
+    it('displays a table when isLoading is false', () => {
+        jest.resetAllMocks();
+        jest.mock('./handler', () => ({
+            __esModule: true,
+            default: () => ({
+                selectType: '',
+                isLoading: false, // Set isLoading to true
+                dataTable: [],
+                showModal: false,
+                selectedData: null,
+                onChangeType: jest.fn(),
+                openDetail: jest.fn(),
+                closeDetail: jest.fn(),
+                isSuccess: true
+            })
+        }));
+        const { getByRole } = render(<PartnershipPage />);
+        const table = getByRole('table-showing');
+        expect(table).toBeInTheDocument();
+    });
 });
