@@ -7,10 +7,9 @@ export const login = (data: IContextState): IContextAction => ({
   payload: data
 })
 
-export const logout = () => ({
-  type: "LOGOUT",
-})
-
+export const logout = (): IContextAction => ({
+  type: "LOGOUT"
+});
 export const setData = (data: IStateItem): IContextAction => ({
   type: "ADD",
   payload: data

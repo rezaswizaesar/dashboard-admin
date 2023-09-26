@@ -25,7 +25,6 @@ const LoginHandler = () => {
   }
   React.useEffect(() => {
     if (responseSubmit.isSuccess && responseSubmit.data) {
-      localStorage.setItem("token", responseSubmit.data.data.token)
       const { token, user } = responseSubmit.data.data
       dispatch(login(user))
       setItem("token", token)
