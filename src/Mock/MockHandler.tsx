@@ -14,7 +14,7 @@ export const fetchTasks_incompleteTask_response = rest.get(
                             ownAsset: false,
                             investmentPlan: '\u003c Rp 500 Mio',
                             createdDate: '2022-05-09T00:57:47.628Z',
-                            personName: 'Kevin Kurniawan ',
+                            personName: 'fathur Kurniawan ',
                             partnershipType: 'OWNERSHIP',
                             employeeNumber: null,
                             email: 'kevkurniawan96@gmail.com',

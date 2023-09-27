@@ -5,7 +5,7 @@ import {
     message
 } from 'antd';
 import usePartnershipHandler from './handler';
-import PartnershipPageStyle from './styles';
+import PartnershipPageStyle from './Partnerships.styles';
 import { useEffect } from 'react';
 import ModalDetailPartnership from '../../../../Components/Partnership/ModalDetail';
 import TablePartnership from '../../../../Components/Partnership/Table';
@@ -54,9 +54,7 @@ const PartnershipPage: React.FC = () => {
                 </Col>
             </Row>
             {isLoading ? (
-                <div role="loading-table-partnership">
-                    <Loading />
-                </div>
+                <Loading />
             ) : (
                 <div role="table-showing">
                     <TablePartnership
