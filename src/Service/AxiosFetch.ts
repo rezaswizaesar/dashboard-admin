@@ -5,26 +5,21 @@ interface AxiosRequestConfigOption extends AxiosRequestConfig {
 }
 
 export const axiosFetch = async (options: AxiosRequestConfigOption
-)=> {
+) => {
     const config: AxiosRequestConfig = {
         baseURL: 'https://web.svc.staging.fithubdev.com/v1/',
-        // baseURL: 'http://localhost:3001/v1/',
         timeout: 5000,
         headers: {
             ['Content-Type']: 'application/json'
         }
     };
     if (options.token) {
-        console.log("masuk ke sin")
         config.headers = {
             ...config.headers,
             Authorization: 'Bearer ' + localStorage.getItem('token')
         };
     }
-    console.log("options", options, config)
     const instance: AxiosInstance = axios.create(config);
     const response: AxiosResponse = await instance(options);
-    console.log(response, "response")
-    // const response: AxiosResponse = await Axios(options);
     return response;
 };

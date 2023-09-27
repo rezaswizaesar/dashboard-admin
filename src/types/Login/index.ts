@@ -11,7 +11,7 @@ export interface ILoginRes {
   locationUser: string
   locationArea: string
   token: string
-  dataApi: IStateItem[]
+  dataApi: IStateItem
 }
 
 export interface ILoginServiceError {
