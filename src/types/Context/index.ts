@@ -1,8 +1,8 @@
 import { Dispatch, ReactNode } from "react";
 
 export interface IStateItem {
-  key: string;
-  data: any[]
+  key: string
+  data: ReactNode
 }
 
 export interface IUser {
@@ -18,6 +18,7 @@ export interface IContextState {
   locationUser: string
   locationArea: string
   typeUser: string
+  token: string
   dataApi: IStateItem[]
 }
 
@@ -28,7 +29,7 @@ export interface IContextModel {
 
 export type IContextAction =
   | { type: 'LOGIN'; payload: IContextState }
-  | { type: 'LOGOUT'; payload: boolean }
+  | { type: 'LOGOUT' }
   | { type: 'ADD'; payload: IStateItem }
   | { type: 'UPDATE'; payload: IStateItem }
   | { type: 'DELETE'; payload: string };

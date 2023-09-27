@@ -1,8 +1,8 @@
 import { Button, Card, Form, Input } from 'antd';
-import LoginHandler from '../LoginHandler';
+import useLoginHandler from '../handler';
 
-const FormCard = () => {
-    const { onSubmit, responseSubmit, form } = LoginHandler();
+const LoginForm = () => {
+    const { onSubmit, isLoading, form } = useLoginHandler();
     return (
         <Card>
             <span className="login-section__card-top">
@@ -46,7 +46,7 @@ const FormCard = () => {
                                 size="middle"
                                 htmlType="submit"
                                 type="primary"
-                                loading={responseSubmit?.isLoading || false}
+                                loading={isLoading || false}
                                 disabled={
                                     !form.isFieldsTouched(true) ||
                                     form
@@ -63,4 +63,4 @@ const FormCard = () => {
         </Card>
     );
 };
-export default FormCard;
+export default LoginForm;
