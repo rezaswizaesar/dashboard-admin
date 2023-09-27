@@ -39,7 +39,6 @@ if (import.meta.env.VITE_MSW === 'true') {
             );
         });
 } else {
-    console.log('import.meta.env.VITE_MSW === false');
     // Render the application in production without the MSW.
     root.render(
         <StrictMode>

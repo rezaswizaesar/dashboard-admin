@@ -1,8 +1,13 @@
-import { render, fireEvent, screen } from '../../../../test-utils';
+import {
+    render,
+    fireEvent,
+    screen,
+    act,
+    renderHook
+} from '../../../../test-utils';
 import PartnershipPage from './index';
-import { renderHook, act } from '@testing-library/react-hooks';
 import usePartnershipHandler from './handler';
-
+import TablePartnership from '../../../../Components/Partnership/Table';
 describe('renders the PartnershipPage component', () => {
     beforeAll(() => {
         // https://jestjs.io/docs/manual-mocks#mocking-methods-which-are-not-implemented-in-jsdom
@@ -29,37 +34,37 @@ describe('renders the PartnershipPage component', () => {
         const tableElement = await screen.findByRole('table-showing');
         expect(tableElement).toBeInTheDocument();
     });
-    // it('handles error response', async () => {
-    //     server.use(
-    //         rest.get(
-    //             'https://web.svc.staging.fithubdev.com/v1/partnerships',
-    //             (_, res, ctx) => {
-    //                 return res(
-    //                     ctx.status(500),
-    //                     ctx.json({ message: 'Internal Server Error' })
-    //                 );
-    //             }
-    //         )
-    //     );
+    it('handles error response', async () => {
+        render(<PartnershipPage />);
 
-    //     render(<PartnershipPage />);
-    //     const warningElement = await screen.findByText('error fetching data !');
-    //     expect(warningElement).toBeInTheDocument();
-    // });
-    it('usePartnershipHandler handles state changes', async () => {
-        const { result, waitForNextUpdate } = renderHook(() =>
-            usePartnershipHandler()
-        );
-
-        act(() => {
-            result.current.onChangeType('OWNERSHIP');
+        const { result } = renderHook(() => usePartnershipHandler());
+        // Mock an error API response
+        await act(async () => {
+            await result.current.onChangeType('error');
         });
-        expect(result.current.isLoading).toBe(true);
+        expect(result.current.isLoading).toBe(false);
+        expect(result.current.isSuccess).toBe(false);
+    });
+    it('handles success response', async () => {
+        render(<PartnershipPage />);
+        const { result } = renderHook(() => usePartnershipHandler());
+        // Mock an error API response
 
-        await waitForNextUpdate();
-
+        await act(async () => {
+            await result.current.onChangeType('OWNERSHIP');
+        });
         expect(result.current.isLoading).toBe(false);
         expect(result.current.dataTable.length).toBe(1);
         expect(result.current.isSuccess).toBe(true);
+        const mockOpenDetail = jest.fn();
+        const { getByTestId } = render(
+            <TablePartnership
+                dataTable={result.current.dataTable}
+                showDetail={mockOpenDetail}
+            />
+        );
+        expect(getByTestId('parnership-phone')).toHaveTextContent(
+            '(+62) 8112228854'
+        );
     });
 });

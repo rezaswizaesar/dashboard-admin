@@ -1,8 +1,7 @@
-import useCheckinHandler from "./handler";
+import useCheckinHandler from './handler';
 
 const Checkin: React.FC = () => {
-    const { state } = useCheckinHandler()
-    console.log('state => ', state)
+    const { state } = useCheckinHandler();
     return <div>Checkin</div>;
 };
 export default Checkin;

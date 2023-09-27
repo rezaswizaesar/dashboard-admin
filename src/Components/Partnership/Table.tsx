@@ -20,7 +20,6 @@ const TablePartnership = ({
                     type="link"
                     style={{ color: 'blue' }}
                     onClick={() => {
-                        console.log(data);
                         showDetail(data);
                     }}>
                     {text}
@@ -30,7 +29,8 @@ const TablePartnership = ({
         {
             title: 'Phone',
             dataIndex: 'phone',
-            key: 'phone'
+            key: 'phone',
+            render: (text) => <span data-testid="parnership-phone">{text}</span>
         },
         {
             title: 'Email',

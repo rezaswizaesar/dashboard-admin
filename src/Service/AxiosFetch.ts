@@ -15,16 +15,13 @@ export const axiosFetch = async (options: AxiosRequestConfigOption
         }
     };
     if (options.token) {
-        console.log("masuk ke sin")
         config.headers = {
             ...config.headers,
             Authorization: 'Bearer ' + localStorage.getItem('token')
         };
     }
-    console.log("options", options, config)
     const instance: AxiosInstance = axios.create(config);
     const response: AxiosResponse = await instance(options);
-    console.log(response, "response")
     // const response: AxiosResponse = await Axios(options);
     return response;
 };

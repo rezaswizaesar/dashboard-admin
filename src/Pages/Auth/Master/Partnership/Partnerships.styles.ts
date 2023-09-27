@@ -5,6 +5,11 @@ const PartnershipStyle = styled.section`
         label{
             color: #fff;
         }
+        &-header{
+            &__button{
+                
+            }
+        }
     };
 `;
 export default PartnershipStyle;

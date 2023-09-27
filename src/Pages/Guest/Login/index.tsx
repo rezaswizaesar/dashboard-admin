@@ -9,12 +9,8 @@ import { AppContext } from '../../../Config/Context';
 import { Navigate } from 'react-router-dom';
 
 const LoginPage: React.FC = () => {
-    const { state } = useContext(AppContext)
+    const { state } = useContext(AppContext);
 
-    if (state.authenticated) {
-        console.log("masuk sini", state)
-        return <Navigate to="/" replace />
-    }
     return (
         <LoginStyle>
             <div className="login">
