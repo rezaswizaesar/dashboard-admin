@@ -1,4 +1,5 @@
 import { Link, Outlet } from 'react-router-dom';
+import CSTransaction from '../Pages/Auth/CSTransaction';
 import Checkin from '../Pages/Auth/Checkin';
 import PartnershipPage from '../Pages/Auth/Master/Partnership';
 import LoginPage from '../Pages/Guest/Login/index';
@@ -22,12 +23,28 @@ const Routelist: RouteType[] = [
         )
     },
     {
+        label: <Link to="/transaction">CS Transaction</Link>,
+        icon: null,
+        sidebar: true,
+        header: true,
+        component: <CSTransaction />,
+        path: '/transaction',
+        routeType: 'auth',
+        role: [],
+        layout: (
+            <>
+                <Outlet></Outlet>
+            </>
+        ),
+        children: []
+    },
+    {
         label: <Link to="/">Check-in</Link>,
         icon: null,
         sidebar: true,
         header: true,
         component: <Checkin />,
-        path: '/',
+        path: '*',
         routeType: 'auth',
         role: [],
         layout: (

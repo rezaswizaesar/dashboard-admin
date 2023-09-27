@@ -1,21 +1,22 @@
 import { FC } from 'react';
 import { Form, Select } from 'antd';
-import useCheckinHandler from './handler';
 import Title from 'antd/es/typography/Title';
+import useCSTransactionHandler from './handler';
 
-const Checkin: FC = () => {
+const CSTransaction: FC = () => {
     const {
         locationUser,
         locationList,
         isLoading,
         function: { handleLocation }
-    } = useCheckinHandler();
+    } = useCSTransactionHandler();
+
     return (
-        <div>
-            <Title level={3} style={{ color: '#FFF' }}>
-                {locationUser}
-            </Title>
+        <div style={{ margin: '1rem auto', minHeight: '100vh' }}>
             <Form.Item>
+                <Title level={5} style={{ color: '#FFF' }}>
+                    Locations
+                </Title>
                 <Select
                     placeholder="Select a Location"
                     style={{
@@ -28,11 +29,15 @@ const Checkin: FC = () => {
                     disabled={isLoading}
                     onChange={handleLocation}
                     options={locationList?.map((item) => {
-                        return { label: item.name, value: item.name };
+                        return {
+                            label: item.name,
+                            value: item.name
+                        };
                     })}
                 />
             </Form.Item>
         </div>
     );
 };
-export default Checkin;
+
+export default CSTransaction;

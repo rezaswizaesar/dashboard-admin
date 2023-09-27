@@ -33,7 +33,9 @@ const RouteLayout: React.FC = () => {
                                     <Route
                                         key={i}
                                         element={
-                                            <AuthLayout {...childroute} />
+                                            <Authenticated>
+                                                <AuthLayout {...childroute} />
+                                            </Authenticated>
                                         }>
                                         <Route
                                             element={childroute.component}
