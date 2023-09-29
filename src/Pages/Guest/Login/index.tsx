@@ -1,7 +1,7 @@
 import { Col, Row } from 'antd';
 import React from 'react';
 import packageJson from '../../../../package.json';
-import { Container } from '../../../Helper/ContainerStyle';
+import { Container } from '../../../helper/style';
 import FitHubLogo from '../../../assets/images/fithub-tp.png';
 import LoginStyle from './Login.Styles';
 import LoginForm from './component/LoginForm';

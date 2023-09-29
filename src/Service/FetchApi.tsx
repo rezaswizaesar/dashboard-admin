@@ -1,6 +1,6 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
 import { useState } from 'react';
-import ApiResponse from '../types/FetchApiType';
+import { ApiResponse } from '../types/Axios';
 interface AxiosRequestConfigOption extends AxiosRequestConfig {
     token: boolean; // Assuming want to add a property "token" of type boolean
 }

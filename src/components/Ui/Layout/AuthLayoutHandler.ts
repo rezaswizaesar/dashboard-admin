@@ -1,6 +1,6 @@
 import React from "react";
+import createAxiosInstance from "../../../service/FetchApi";
 // import { useNavigate } from "react-router-dom";
-import createAxiosInstance from "../../Service/FetchApi";
 
 const AuthLayoutHandler = ()=>{
   // const navigate = useNavigate()

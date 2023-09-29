@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../../../Config/Context";
-import useLocationList from "../../../Helper/Hooks/useLocationList";
+import useLocationList from "../../../helper/Hooks/useLocationList";
 
 
 const useCheckinHandler = () => {

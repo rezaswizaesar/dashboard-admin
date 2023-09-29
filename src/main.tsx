@@ -14,7 +14,7 @@ import { createRoot } from 'react-dom/client';
 import App from './App'; // The main component of the application.
 import './index.css';
 import { setupWorker } from 'msw';
-import { handlers } from './Mock/MockHandler';
+import { handlers } from './helper/Mock/MockHandler';
 
 // The root element where React will be mounted.
 const root = createRoot(document.getElementById('root') as HTMLElement);
@@ -25,7 +25,7 @@ if (import.meta.env.VITE_MSW === 'true') {
     // When development, setup the MSW.
     // When development, setup the MSW.
     // import the worker (under the browser.ts file)
-    import('./Mock/MockBrowser')
+    import('./helper/Mock/MockBrowser')
         .then(({ worker }) => {
             // Start the worker.
             worker.start();

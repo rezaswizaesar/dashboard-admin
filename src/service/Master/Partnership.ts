@@ -1,5 +1,5 @@
 import { PartnershipService, PartnershipServiceError, TypePartnershipParameter, TypePartnershipResp } from "../../types/Partnership";
-import { axiosFetch } from "../AxiosFetch";
+import { axiosFetch } from "../../helper/Axios/AxiosFetch";
 
 export const getPartnership = async ({partnershipType}: TypePartnershipParameter) => {
     try {

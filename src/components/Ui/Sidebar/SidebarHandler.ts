@@ -1,6 +1,6 @@
 import React from "react"
 import { useLocation } from "react-router-dom"
-import Routelist from "../../Routes/RouteList"
+import Routelist from "../../../Routes/RouteList"
 
 const SidebarHandler = ()=>{
   const [current, setCurrent] = React.useState("")
