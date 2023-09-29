@@ -1,7 +1,7 @@
 import { Menu } from 'antd';
 import React from 'react';
 import SidebarHandler from './SidebarHandler';
-import SidebarStyle from './SidebarStyle';
+import SidebarStyle from './Style';
 import Logo from '../../assets/Images/fithub-tp.png';
 import { Link } from 'react-router-dom';
 

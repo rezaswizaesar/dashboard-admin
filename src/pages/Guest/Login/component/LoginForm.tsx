@@ -1,5 +1,5 @@
 import { Button, Card, Form, Input } from 'antd';
-import useLoginHandler from '../handler';
+import useLoginHandler from '../Handler';
 
 const LoginForm = () => {
     const { onSubmit, isLoading, form } = useLoginHandler();

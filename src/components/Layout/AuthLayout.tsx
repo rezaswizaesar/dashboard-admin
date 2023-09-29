@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 import Header from '../Header';
 import Sidebar from '../Sidebar';
 import AuthLayoutHandler from './AuthLayoutHandler';
-import LayoutStyle from './LayoutStyle';
+import LayoutStyle from './Style';
 interface AuthLayoutProps {
     sidebar: boolean;
     header: boolean;

@@ -6,7 +6,7 @@ import {
     renderHook
 } from '../../../../test-utils';
 import PartnershipPage from './index';
-import usePartnershipHandler from './handler';
+import usePartnershipHandler from './Handler';
 import TablePartnership from './Component/Table';
 describe('renders the PartnershipPage component', () => {
     beforeAll(() => {

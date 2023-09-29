@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import HeaderStyle from './HeaderStyle';
+import HeaderStyle from './Style';
 interface IHeaderProps {
     label: ReactNode;
 }
