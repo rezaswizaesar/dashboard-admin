@@ -7,8 +7,8 @@ import {
 import usePartnershipHandler from './handler';
 import PartnershipPageStyle from './Partnerships.styles';
 import { useEffect } from 'react';
-import ModalDetailPartnership from '../../../../components/Partnership/ModalDetail';
-import TablePartnership from '../../../../components/Partnership/Table';
+import ModalDetailPartnership from './Component/ModalDetail';
+import TablePartnership from './Component/Table';
 import SelectCostume from '../../../../components/UI/Select';
 import Loading from '../../../../components/UI/Loading';
 

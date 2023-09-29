@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Authenticated from '../components/UI/Authenticated';
+import Authenticated from '../components/Authenticated';
 import AuthLayout from '../components/UI/Layout/AuthLayout';
 import GuestLayout from '../components/UI/Layout/GuestLayout';
 import Routelist from './RouteList';

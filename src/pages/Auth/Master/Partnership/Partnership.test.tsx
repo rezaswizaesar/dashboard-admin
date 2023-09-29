@@ -7,7 +7,7 @@ import {
 } from '../../../../test-utils';
 import PartnershipPage from './index';
 import usePartnershipHandler from './handler';
-import TablePartnership from '../../../../components/Partnership/Table';
+import TablePartnership from './Component/Table';
 describe('renders the PartnershipPage component', () => {
     beforeAll(() => {
         // https://jestjs.io/docs/manual-mocks#mocking-methods-which-are-not-implemented-in-jsdom

@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import { Navigate } from 'react-router-dom'
-import { AppContext } from '../../../config/Context';
+import { AppContext } from '../../config/Context';
 
 
 const Authenticated = ({ children }: any) => {

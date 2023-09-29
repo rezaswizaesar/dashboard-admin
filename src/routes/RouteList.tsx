@@ -1,8 +1,8 @@
 import { Link, Outlet } from 'react-router-dom';
-import CSTransaction from '../_pages/Auth/CSTransaction';
-import Checkin from '../_pages/Auth/Checkin';
-import PartnershipPage from '../_pages/Auth/Master/Partnership';
-import LoginPage from '../_pages/Guest/Login/index';
+import CSTransaction from '../pages/Auth/CSTransaction';
+import Checkin from '../pages/Auth/Checkin';
+import PartnershipPage from '../pages/Auth/Master/Partnership';
+import LoginPage from '../pages/Guest/Login/index';
 import { RouteType } from '../types/RouteList.type';
 
 const Routelist: RouteType[] = [
