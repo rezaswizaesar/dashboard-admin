@@ -63,6 +63,7 @@ describe('renders the PartnershipPage component', () => {
                 showDetail={mockOpenDetail}
             />
         );
+        screen.debug();
         expect(getByTestId('parnership-phone')).toHaveTextContent(
             '(+62) 8112228854'
         );
