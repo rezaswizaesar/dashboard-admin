@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
-import { mswServer } from './_helper/Mock/MockHttpServer';
+import { mswServer } from './helper/Mock/MockHttpServer';
 import { ConfigProvider } from 'antd';
 
 beforeAll(() => mswServer.listen());
