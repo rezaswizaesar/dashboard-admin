@@ -2,7 +2,7 @@ import { Menu } from 'antd';
 import React from 'react';
 import SidebarHandler from './SidebarHandler';
 import SidebarStyle from './SidebarStyle';
-import Logo from '../../../assets/Images/fithub-tp.png';
+import Logo from '../../assets/Images/fithub-tp.png';
 import { Link } from 'react-router-dom';
 
 const Sidebar: React.FC = () => {
