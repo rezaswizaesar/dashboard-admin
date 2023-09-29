@@ -4,8 +4,8 @@ import {
     Form, //Select,
     message
 } from 'antd';
-import usePartnershipHandler from './handler';
-import PartnershipPageStyle from './Partnerships.styles';
+import usePartnershipHandler from './_handler';
+import PartnershipPageStyle from './Style';
 import { useEffect } from 'react';
 import ModalDetailPartnership from './Component/ModalDetail';
 import TablePartnership from './Component/Table';

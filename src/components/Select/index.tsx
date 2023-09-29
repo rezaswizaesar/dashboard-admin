@@ -1,5 +1,5 @@
 import React from 'react';
-import Style from './Select.style';
+import Style from './Style';
 interface ISelectCostume {
     options: {
         value: number | string;
