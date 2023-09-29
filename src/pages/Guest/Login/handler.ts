@@ -1,10 +1,10 @@
 import { Form } from 'antd';
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { login } from "../../../Config/Action";
-import { AppContext } from "../../../Config/Context";
+import { login } from "../../../config/Action";
+import { AppContext } from "../../../config/Context";
 import { useLocalStorage } from "../../../helper/Hooks/useLocalStorage";
-import { useLoginService } from "../../../Service/Login";
+import { useLoginService } from "../../../service/Login";
 import { IFormLogin, ILoginRes, ILoginServiceError } from "../../../types/Login";
 
 const useLoginHandler = () => {

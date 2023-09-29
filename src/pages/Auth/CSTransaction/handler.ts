@@ -1,12 +1,14 @@
 import { useContext, useEffect, useState } from "react";
-import { AppContext } from "../../../Config/Context";
+import { AppContext } from "../../../config/Context";
 import useLocationList from "../../../helper/Hooks/useLocationList";
+import { ILocationList } from "../../../types/Global/LocationList";
 
 
-const useCheckinHandler = () => {
+const useCSTransactionHandler = () => {
   const { state } = useContext(AppContext);
-  const { locationList, isLoading } = useLocationList();
+  const { isLoading } = useLocationList();
   const [locationUser, setLocationUser] = useState<string>("")
+  const [locationList, setLocationList] = useState<ILocationList[]>()
 
   const handleLocation = (value: string) => {
     console.log(value)
@@ -15,6 +17,7 @@ const useCheckinHandler = () => {
 
   useEffect(() => {
     setLocationUser(state.locationUser)
+    setLocationList(state.dataApi.locationList)
   }, [])
 
 
@@ -23,4 +26,4 @@ const useCheckinHandler = () => {
   }
 }
 
-export default useCheckinHandler;
+export default useCSTransactionHandler;

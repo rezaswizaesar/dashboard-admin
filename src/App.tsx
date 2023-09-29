@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import RouteLayout from './Routes';
-import { AppProvider } from './Config/Context';
+import RouteLayout from './routes';
+import { AppProvider } from './config/Context';
 
 type IApp = {
     children?: ReactNode;

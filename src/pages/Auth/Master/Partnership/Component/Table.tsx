@@ -3,7 +3,7 @@ import { ColumnsType } from 'antd/es/table';
 import {
     TypePartnershipResp,
     TypePartnershipTableProps
-} from '../../types/Partnership';
+} from '../../../../../types/Partnership';
 // import { TypePartnershipResp, TypePartnershipTableProps } from '@/types/Partnership';
 
 const TablePartnership = ({

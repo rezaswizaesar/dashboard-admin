@@ -7,10 +7,10 @@ import {
 import usePartnershipHandler from './handler';
 import PartnershipPageStyle from './Partnerships.styles';
 import { useEffect } from 'react';
-import ModalDetailPartnership from '../../../../Components/Partnership/ModalDetail';
-import TablePartnership from '../../../../Components/Partnership/Table';
-import SelectCostume from '../../../../components/Ui/Select';
-import Loading from '../../../../components/Ui/Loading';
+import ModalDetailPartnership from './Component/ModalDetail';
+import TablePartnership from './Component/Table';
+import SelectCostume from '../../../../components/UI/Select';
+import Loading from '../../../../components/UI/Loading';
 
 const PartnershipPage: React.FC = () => {
     const {

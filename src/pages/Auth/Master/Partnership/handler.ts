@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { usePartnershipService } from '../../../../Service/Master/Partnership';
+import { usePartnershipService } from '../../../../service/Master/Partnership';
 import { PartnershipServiceError, TypePartnershipResp } from '../../../../types/Partnership';
 
 const usePartnershipHandler = () => {

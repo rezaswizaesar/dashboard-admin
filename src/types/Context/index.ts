@@ -20,8 +20,8 @@ export interface IContextState {
   locationUser: string
   locationArea: string
   typeUser: string
-  token: string
-  dataApi: IStateItem
+  token?: string
+  dataApi: IStateItem | []
 }
 
 export interface IContextModel {
