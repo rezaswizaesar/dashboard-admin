@@ -1,7 +1,7 @@
 
 import { notification } from "antd";
 import { IFormLogin, ILoginRes, ILoginServiceError, LoginService } from "../../types/Login";
-import { axiosFetch } from "../AxiosFetch";
+import { axiosFetch } from "../../helper/Axios/AxiosFetch";
 
 export const postLogin = async (values: IFormLogin) => {
 

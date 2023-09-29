@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import config from '../../Helper/Variable'
+import config from '../../../helper/constant'
 
 const HeaderStyle = styled.header`
     position: absolute;

@@ -1,6 +1,6 @@
 
 import { ILocationRes, ILocationServiceError, LocationService } from "../../types/Global/LocationList";
-import { axiosFetch } from "../AxiosFetch";
+import { axiosFetch } from "../../helper/Axios/AxiosFetch";
 
 export const getLocation = async () => {
   try {
