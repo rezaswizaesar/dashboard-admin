@@ -9,8 +9,8 @@ import PartnershipPageStyle from './Partnerships.styles';
 import { useEffect } from 'react';
 import ModalDetailPartnership from './Component/ModalDetail';
 import TablePartnership from './Component/Table';
-import SelectCostume from '../../../../components/UI/Select';
-import Loading from '../../../../components/UI/Loading';
+import SelectCostume from '../../../../components/Select';
+import Loading from '../../../../components/Loading';
 
 const PartnershipPage: React.FC = () => {
     const {
