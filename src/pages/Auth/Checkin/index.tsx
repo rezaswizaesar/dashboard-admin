@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Form, Select } from 'antd';
-import useCheckinHandler from './_handler';
+import useCheckinHandler from './Handler';
 import Title from 'antd/es/typography/Title';
 
 const Checkin: FC = () => {

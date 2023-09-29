@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import config from '../../helper/_constant'
+import config from '../../helper/Constant'
 
 const SidebarStyle = styled.aside`
   background-color: #212529;

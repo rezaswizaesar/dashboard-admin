@@ -1,6 +1,6 @@
 
 import styled from 'styled-components'
-import config from '../../helper/_constant'
+import config from '../../helper/Constant'
 const LayoutStyle = styled.div`
   padding: 6.5rem 0;
   background: linear-gradient(87deg,#f5365c,#f56036);
