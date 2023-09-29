@@ -8,7 +8,8 @@ import {
 
 const TablePartnership = ({
     dataTable,
-    showDetail
+    showDetail,
+    isLoading
 }: TypePartnershipTableProps) => {
     const columnsPartnershipTable: ColumnsType<TypePartnershipResp> = [
         {
@@ -46,6 +47,7 @@ const TablePartnership = ({
     return (
         <Table
             data-testid="table-showing"
+            loading={isLoading}
             columns={columnsPartnershipTable}
             dataSource={dataTable}
         />

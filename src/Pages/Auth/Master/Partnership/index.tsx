@@ -53,18 +53,13 @@ const PartnershipPage: React.FC = () => {
                     </Form.Item>
                 </Col>
             </Row>
-            {isLoading ? (
-                <div role="loading-table-partnership">
-                    <Loading />
-                </div>
-            ) : (
-                <div role="table-showing">
-                    <TablePartnership
-                        dataTable={dataTable}
-                        showDetail={openDetail}
-                    />
-                </div>
-            )}
+            <div role="table-showing">
+                <TablePartnership
+                    isLoading={isLoading}
+                    dataTable={dataTable}
+                    showDetail={openDetail}
+                />
+            </div>
             <ModalDetailPartnership
                 selectedData={selectedData}
                 showModal={showModal}

@@ -18,7 +18,7 @@ export const getLocation = async () => {
     })
     return newValue
   } catch (error) {
-    console.log(error)
+    // console.log(error)
     return {
       isSuccess: false,
     } as ILocationServiceError

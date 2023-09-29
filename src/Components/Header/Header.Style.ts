@@ -21,6 +21,18 @@ const HeaderStyle = styled.header`
                 color: #fff;
             }
         }
+        &-menu{
+            &__button {
+                color: #FFF;
+                cursor: pointer;
+                font-size:14px;
+                font-weight: 500;
+                
+                &:hover {
+                    color: #dbd7d7 !important;
+                }
+            }
+        }
     }
 `
 export default HeaderStyle

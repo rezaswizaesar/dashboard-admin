@@ -6,7 +6,7 @@ export interface PartnershipServiceError {
     isSuccess: boolean;
 }
 
-export interface TypePartnershipParameter{
+export interface TypePartnershipParameter {
     partnershipType: string
 }
 export interface TypePartnershipTable {
@@ -17,7 +17,7 @@ export interface TypePartnershipTable {
     createdDate: string;
 }
 
-export interface TypePartnershipResp extends TypePartnershipTable{
+export interface TypePartnershipResp extends TypePartnershipTable {
     partnershipType: string;
     ownAsset: boolean;
     investmentPlan: string;
@@ -27,13 +27,14 @@ export interface TypePartnershipResp extends TypePartnershipTable{
     dialCode: string;
 }
 
-export interface TypePartnershipModal{
+export interface TypePartnershipModal {
     showModal: boolean;
     selectedData: TypePartnershipResp | null;
     closeModal: () => void;
 }
 
-export interface TypePartnershipTableProps{
+export interface TypePartnershipTableProps {
     dataTable: TypePartnershipResp[];
+    isLoading: boolean
     showDetail: (selectedData: TypePartnershipResp) => void;
 }

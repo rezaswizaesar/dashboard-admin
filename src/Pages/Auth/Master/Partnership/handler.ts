@@ -13,6 +13,7 @@ const usePartnershipHandler = () => {
 
     const onChangeType = async (value: string) =>{
         setIsLoading(true);
+        setDataTable([])
         setSelectType(value);
         let response = await service.getPartnership({
             partnershipType: value

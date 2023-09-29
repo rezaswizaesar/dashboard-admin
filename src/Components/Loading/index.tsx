@@ -1,12 +1,16 @@
 import { Spin } from 'antd';
-
-const Loading = () => {
+import LoadingStyle from './Loading.Style';
+interface ILoading {
+    fullPage: boolean;
+}
+const Loading: React.FC<ILoading> = ({ fullPage = false }) => {
     return (
-        <div
+        <LoadingStyle
+            fullPage={fullPage}
             data-testid="loading-table-partnership"
             className="loading-container">
             <Spin size="large" />
-        </div>
+        </LoadingStyle>
     );
 };
 

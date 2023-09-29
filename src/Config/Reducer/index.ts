@@ -16,6 +16,7 @@ const AppReducer = (state: IContextState, action: IContextAction): IContextState
       }
 
     case "LOGOUT":
+      console.log("LOGOUT")
       return {
         ...state,
         authenticated: false,

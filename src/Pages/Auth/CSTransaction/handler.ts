@@ -16,6 +16,7 @@ const useCSTransactionHandler = () => {
   }
 
   useEffect(() => {
+    console.log('state => ', state)
     setLocationUser(state.locationUser)
     setLocationList(state.dataApi.locationList)
   }, [])
