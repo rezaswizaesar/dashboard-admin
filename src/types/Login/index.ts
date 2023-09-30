@@ -1,4 +1,3 @@
-import { IStateItem } from "../Context"
 
 export interface LoginService {
   postLogin: (values: IFormLogin) => Promise<ILoginRes | ILoginServiceError>
@@ -11,7 +10,6 @@ export interface ILoginRes {
   locationUser: string
   locationArea: string
   token: string
-  dataApi: IStateItem
 }
 
 export interface ILoginServiceError {
