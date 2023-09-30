@@ -4,7 +4,6 @@ import { ILocationRes } from "../Global/LocationList";
 export interface IStateItem {
   key: string
   data: any[]
-  locationList?: ILocationRes[]
 }
 
 export interface IUser {
@@ -20,8 +19,8 @@ export interface IContextState {
   locationUser: string
   locationArea: string
   typeUser: string
-  token: string
-  dataApi: IStateItem
+  token?: string
+  locationList?: ILocationRes[]
 }
 
 export interface IContextModel {

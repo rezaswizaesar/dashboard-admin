@@ -20,7 +20,7 @@ export const updateData = (data: IStateItem): IContextAction => ({
   payload: data
 })
 
-export const removeData = (id: string): IContextAction => ({
+export const removeData = (key: string): IContextAction => ({
   type: "DELETE",
-  payload: id
+  payload: key
 });

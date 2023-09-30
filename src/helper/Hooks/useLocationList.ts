@@ -26,8 +26,8 @@ const useLocationList = () => {
   }
 
   useEffect(() => {
-    if (state.dataApi.locationList) {
-      let locations = state.dataApi.locationList;
+    if (state.locationList) {
+      let locations = state.locationList;
       setLocationList(locations);
     } else {
       fetchLocation();

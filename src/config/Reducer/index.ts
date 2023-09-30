@@ -29,27 +29,20 @@ const AppReducer = (state: IContextState, action: IContextAction): IContextState
     case "ADD":
       return {
         ...state,
-        dataApi: {
-          ...state.dataApi,
-          [action.payload.key]: action.payload.data
-        }
+        [action.payload.key]: action.payload.data
       };
 
     case "UPDATE":
       return {
         ...state,
-        dataApi: {
-          ...state.dataApi,
-          [action.payload.key]: action.payload.data
-        }
+        [action.payload.key]: action.payload.data
       };
 
     case "DELETE":
-      const newState: any = { ...state.dataApi };
+      const newState: any = { ...state };
       delete newState[action.payload];
       return {
-        ...state,
-        dataApi: newState
+        ...newState
       }
 
 

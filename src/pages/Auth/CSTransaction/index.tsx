@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Form, Select } from 'antd';
+import { Form, Select, Button } from 'antd';
 import Title from 'antd/es/typography/Title';
 import useCSTransactionHandler from './Handler';
 
@@ -8,11 +8,17 @@ const CSTransaction: FC = () => {
         locationUser,
         locationList,
         isLoading,
-        function: { handleLocation }
+        function: { handleLocation, removeLocation, displayLocation }
     } = useCSTransactionHandler();
 
     return (
-        <div style={{ margin: '1rem auto', minHeight: '100vh' }}>
+        <div
+            style={{
+                margin: '1rem auto',
+                minHeight: '100vh',
+                display: 'flex',
+                justifyContent: 'space-between'
+            }}>
             <Form.Item>
                 <Title level={5} style={{ color: '#FFF' }}>
                     Locations
@@ -35,6 +41,10 @@ const CSTransaction: FC = () => {
                         };
                     })}
                 />
+            </Form.Item>
+            <Form.Item style={{ display: 'flex', gap: '10px' }}>
+                <Button onClick={removeLocation}>Clear Location</Button>
+                <Button onClick={displayLocation}>display Location</Button>
             </Form.Item>
         </div>
     );

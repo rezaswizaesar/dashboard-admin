@@ -2,10 +2,11 @@ import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../../../config/Context";
 import useLocationList from "../../../helper/Hooks/useLocationList";
 import { ILocationList } from "../../../types/Global/LocationList";
+import { removeData } from "../../../config/Action";
 
 
 const useCSTransactionHandler = () => {
-  const { state } = useContext(AppContext);
+  const { state, dispatch } = useContext(AppContext);
   const { isLoading } = useLocationList();
   const [locationUser, setLocationUser] = useState<string>("")
   const [locationList, setLocationList] = useState<ILocationList[]>()
@@ -15,14 +16,22 @@ const useCSTransactionHandler = () => {
     setLocationUser(value)
   }
 
+  const removeLocation = () => {
+    dispatch(removeData("locationList"))
+  }
+
+  const displayLocation = () => {
+    console.log("location List => ", state)
+  }
+
   useEffect(() => {
     setLocationUser(state.locationUser)
-    setLocationList(state.dataApi.locationList)
+    setLocationList(state.locationList)
   }, [])
 
 
   return {
-    locationUser, locationList, isLoading, function: { handleLocation }
+    locationUser, locationList, isLoading, function: { handleLocation, removeLocation, displayLocation }
   }
 }
 
