@@ -1,10 +1,9 @@
-import React, { ReactNode } from 'react';
-import HeaderStyle from './Style';
-import { Button, Dropdown, MenuProps } from 'antd';
 import { LogoutOutlined } from '@ant-design/icons';
-import useHeaderHandler from './Handler';
+import { Button, Dropdown, MenuProps } from 'antd';
+import React from 'react';
 import { IHeaderProps } from '../../types/Component/Header';
-
+import useHeaderHandler from './Handler';
+import HeaderStyle from './Style';
 
 const Header: React.FC<IHeaderProps> = ({ label }) => {
     const {
@@ -42,7 +41,10 @@ const Header: React.FC<IHeaderProps> = ({ label }) => {
                     arrow
                     trigger={['click']}
                     overlayStyle={{ minWidth: '200px' }}>
-                    <Button type="link" className="header-menu__button">
+                    <Button
+                        type="link"
+                        size="large"
+                        className="header-menu__button">
                         {userTitle}
                     </Button>
                 </Dropdown>
