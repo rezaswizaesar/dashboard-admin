@@ -21,6 +21,15 @@ const HeaderStyle = styled.header`
                 color: #fff;
             }
         }
+        &-menu {
+            &__button {
+                color: #f0f0f0;
+                
+                &:hover {
+                    color: #d1cbcb !important;
+                }
+            }
+        }
     }
 `
 export default HeaderStyle

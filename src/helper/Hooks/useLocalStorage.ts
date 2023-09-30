@@ -19,5 +19,10 @@ export const useLocalStorage = () => {
     setValue(null);
   };
 
-  return { value, setItem, getItem, removeItem };
+  const clearItem = () => {
+    localStorage.clear();
+    setValue(null);
+  };
+
+  return { value, setItem, getItem, removeItem, clearItem };
 };
