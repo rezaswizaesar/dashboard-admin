@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { login } from "../../../config/Action";
 import { AppContext } from "../../../config/Context";
 import { useLocalStorage } from "../../../helper/Hooks/useLocalStorage";
-import { useLoginService } from "../../../service/Login";
 import { IFormLogin, ILoginRes, ILoginServiceError } from "../../../types/Login";
+import { useLoginService } from '../../../Service/Login';
 
 const useLoginHandler = () => {
   const [isLoading, setIsLoading] = useState(false);
