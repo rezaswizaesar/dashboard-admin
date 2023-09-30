@@ -1,7 +1,5 @@
 import { IContextAction, IContextState, IStateItem } from "../../types/Context";
 
-
-
 export const login = (data: IContextState): IContextAction => ({
   type: "LOGIN",
   payload: data
