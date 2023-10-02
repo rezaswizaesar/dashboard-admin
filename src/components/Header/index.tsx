@@ -1,4 +1,4 @@
-import { LogoutOutlined } from '@ant-design/icons';
+import { LogoutOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Dropdown, MenuProps } from 'antd';
 import React from 'react';
 import { IHeaderProps } from '../../types/Component/Header';
@@ -44,6 +44,7 @@ const Header: React.FC<IHeaderProps> = ({ label }) => {
                     <Button
                         type="link"
                         size="large"
+                        icon={<UserOutlined style={{ fontSize: '20px' }} />}
                         className="header-menu__button">
                         {userTitle}
                     </Button>
