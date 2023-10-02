@@ -1,17 +1,16 @@
-import { Outlet, useNavigate } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import { GuestLayoutProps } from '../../../types/Layout/Guest';
-import { useContext } from 'react';
-import { AppContext } from '../../../config/Context';
 import Header from '../../Header';
+import Loading from '../../Loading';
 import Sidebar from '../../Sidebar';
+import useGuestLayoutHandler from './Handler';
 
 const GuestLayout: React.FC<GuestLayoutProps> = (route) => {
     const { header, sidebar } = route;
-    const navigate = useNavigate();
-    const { state } = useContext(AppContext);
+    const { isLoading } = useGuestLayoutHandler();
 
-    if (state?.authenticated) {
-        navigate('/login');
+    if (isLoading) {
+        return <Loading />;
     }
     return (
         <div>

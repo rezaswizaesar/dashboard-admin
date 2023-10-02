@@ -2,20 +2,20 @@ import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AppContext } from "../../../config/Context";
 import { useLocalStorage } from "../../../helper/Hooks/useLocalStorage";
-import { useAuthLayoutService } from "../../../Service/AuthLayout";
 import { login, logout } from "../../../config/Action";
 import { IAuthRes, IAuthServiceError } from "../../../types/Layout/Auth";
+import { useAuthLayoutService } from "../../../service/AuthLayout";
 
 const useAuthLayoutHandler = () => {
   const { dispatch } = useContext(AppContext);
   const { setItem } = useLocalStorage()
-  const [isLoading, setIsLoading] = useState(true);
-  const [isSuccess, setIsSuccess] = useState(true);
   const service = useAuthLayoutService()
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(true);
+  const [isSuccess, setIsSuccess] = useState(true);
+  
   // TODO :
   //  tambahkan service untuk fetch api `auth/config?appName=Dashboard`
-  //  tambahkan service untuk fetch api `/auth/me`
 
   const fetchAuth = async () => {
     let response = await service.getAuth();
@@ -33,18 +33,6 @@ const useAuthLayoutHandler = () => {
   useEffect(() => {
     fetchAuth()
   }, [])
-
-
-  // useEffect(() => {
-  //   const token = getItem('token');
-  //   if (token) {
-  //     console.log('login');
-  //     setIsLogin(true);
-  //   } else {
-  //     console.log('logout');
-  //     setIsLogin(false);
-  //   }
-  // }, []);
 
   return { isLoading, isSuccess }
 }

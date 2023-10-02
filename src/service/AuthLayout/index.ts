@@ -22,7 +22,6 @@ export const getAuth = async () => {
 
     return newValue
   } catch (error) {
-    // console.log(error)
     return {
       isSuccess: false,
     } as IAuthServiceError
