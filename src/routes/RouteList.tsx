@@ -30,7 +30,7 @@ const Routelist: RouteType[] = [
         component: <CSTransaction />,
         path: '/transaction',
         routeType: 'auth',
-        role: [],
+        role: ['Admin'],
         layout: (
             <>
                 <Outlet></Outlet>
@@ -46,7 +46,7 @@ const Routelist: RouteType[] = [
         component: <Checkin />,
         path: '*',
         routeType: 'auth',
-        role: [],
+        role: ['Admin', 'CS'],
         layout: (
             <>
                 <Outlet></Outlet>
@@ -62,7 +62,7 @@ const Routelist: RouteType[] = [
         component: null,
         path: '/master',
         routeType: 'auth',
-        role: [],
+        role: ['Admin', 'CS'],
         layout: (
             <>
                 <Outlet></Outlet>
@@ -77,6 +77,7 @@ const Routelist: RouteType[] = [
                 component: <div />,
                 path: '/master/pos-management',
                 routeType: 'auth',
+                role: ['Admin'],
                 layout: (
                     <>
                         <Outlet></Outlet>
@@ -88,6 +89,7 @@ const Routelist: RouteType[] = [
                 icon: null,
                 sidebar: true,
                 header: true,
+                role: ['Admin', 'CS'],
                 component: <PartnershipPage />,
                 path: '/master/partnership',
                 routeType: 'auth',

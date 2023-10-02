@@ -1,9 +1,10 @@
 import { Dispatch, ReactNode } from "react";
+import { IGetProfileServiceRes } from "../Global/GetProfile";
 import { ILocationRes } from "../Global/LocationList";
 
 export interface IStateItem {
   key: string
-  data: any[]
+  data: any
 }
 
 export interface IUser {
@@ -20,7 +21,8 @@ export interface IContextState {
   locationArea: string
   typeUser: string
   token?: string
-  locationList?: ILocationRes[]
+  locationList?: ILocationRes[],
+  profile: IGetProfileServiceRes
 }
 
 export interface IContextModel {
