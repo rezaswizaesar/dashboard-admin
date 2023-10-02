@@ -16,9 +16,9 @@ const RouteLayout: React.FC = () => {
                                 <GuestLayout {...route} />
                             ) : (
                                 route.children.length < 1 && (
-                                    <Authenticated>
-                                        <AuthLayout {...route} />
-                                    </Authenticated>
+                                    // <Authenticated>
+                                    <AuthLayout {...route} />
+                                    // </Authenticated>
                                 )
                             )
                         }
@@ -34,9 +34,9 @@ const RouteLayout: React.FC = () => {
                                     <Route
                                         key={i}
                                         element={
-                                            <Authenticated>
-                                                <AuthLayout {...childroute} />
-                                            </Authenticated>
+                                            // <Authenticated>
+                                            <AuthLayout {...childroute} />
+                                            // </Authenticated>
                                         }>
                                         <Route
                                             element={childroute.component}

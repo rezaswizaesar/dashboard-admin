@@ -1,8 +1,11 @@
-import React from "react"
+import React, { useContext } from "react"
 import { useLocation } from "react-router-dom"
+import { AppContext } from "../../config/Context"
+import handleAccessSidebar from "../../Helper/Handler/handleAccessSidebar"
 import Routelist from "../../routes/RouteList"
 
 const SidebarHandler = ()=>{
+  const {state} = useContext(AppContext)
   const [current, setCurrent] = React.useState("")
   const [openKey, setOpenKey] = React.useState<any>("")
   const location = useLocation();
@@ -17,7 +20,8 @@ const SidebarHandler = ()=>{
       })
   }
   const NavList = ()=>{
-    const sidebarMenu = Routelist.filter(value => value.label !== "").map((item) => {
+    const filteredData = handleAccessSidebar(Routelist, state?.profile?.typeUser);
+    const sidebarMenu = filteredData.filter(value => value.label !== "").map((item) => {
       return {
         label: item.label,
         key: item.path,
@@ -33,11 +37,10 @@ const SidebarHandler = ()=>{
 
   // Update openKey when the location changes
   React.useEffect(() => {
-      const x = location.pathname;
-
+      const path_location = location.pathname;
       const filteredData = NavList().filter((item) => {
           if (item.children && item.children.length > 0) {
-              return item.children.some((child: any) => child.key === x);
+              return item.children.some((child: any) => child.key === path_location);
           }
           return false;
       });
