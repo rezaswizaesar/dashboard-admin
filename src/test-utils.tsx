@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
-import { mswServer } from './Helper/Mock/MockHttpServer';
 import { ConfigProvider } from 'antd';
+import { mswServer } from './helper/Mock/MockHttpServer';
 
 beforeAll(() => mswServer.listen());
 afterEach(() => mswServer.resetHandlers());
