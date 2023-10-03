@@ -77,7 +77,7 @@ const Routelist: RouteType[] = [
                 component: <div />,
                 path: '/master/pos-management',
                 routeType: 'auth',
-                role: ['CS'],
+                role: ['Admin'],
                 layout: (
                     <>
                         <Outlet></Outlet>
