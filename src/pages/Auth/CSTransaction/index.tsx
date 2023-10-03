@@ -3,7 +3,7 @@ import { Form, Select, Button } from 'antd';
 import Title from 'antd/es/typography/Title';
 import useCSTransactionHandler from './Handler';
 
-const CSTransaction: FC = () => {
+const CSTransactionPage: FC = () => {
     const {
         locationUser,
         locationList,
@@ -43,11 +43,11 @@ const CSTransaction: FC = () => {
                 />
             </Form.Item>
             <Form.Item style={{ display: 'flex', gap: '10px' }}>
-                <Button onClick={removeLocation}>Clear Location</Button>
+                <Button onClick={removeLocation} style={{marginRight:"16px"}}>Clear Location</Button>
                 <Button onClick={displayLocation}>display Location</Button>
             </Form.Item>
         </div>
     );
 };
 
-export default CSTransaction;
+export default CSTransactionPage;

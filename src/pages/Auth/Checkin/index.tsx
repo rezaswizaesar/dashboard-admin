@@ -3,7 +3,7 @@ import { Form, Select } from 'antd';
 import useCheckinHandler from './Handler';
 import Title from 'antd/es/typography/Title';
 
-const Checkin: FC = () => {
+const CheckinPage: FC = () => {
     const {
         locationUser,
         locationList,
@@ -35,4 +35,5 @@ const Checkin: FC = () => {
         </div>
     );
 };
-export default Checkin;
+export default CheckinPage;
+

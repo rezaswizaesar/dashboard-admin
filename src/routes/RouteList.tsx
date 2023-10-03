@@ -1,9 +1,9 @@
 import { Link, Outlet } from 'react-router-dom';
-import CSTransaction from '../pages/Auth/CSTransaction';
-import Checkin from '../pages/Auth/Checkin';
-import PartnershipPage from '../pages/Auth/Master/Partnership';
-import LoginPage from '../pages/Guest/Login/index';
 import { RouteType } from '../types/RouteList.type';
+import LoginPage from '../pages/Guest/Login/index';
+import CSTransactionPage from '../pages/Auth/CSTransaction';
+import CheckinPage from '../pages/Auth/Checkin';
+import PartnershipPage from '../pages/Auth/Master/Partnership';
 
 const Routelist: RouteType[] = [
     {
@@ -27,10 +27,10 @@ const Routelist: RouteType[] = [
         icon: null,
         sidebar: true,
         header: true,
-        component: <CSTransaction />,
+        component: <CSTransactionPage />,
         path: '/transaction',
         routeType: 'auth',
-        role: [],
+        role: ['Admin'],
         layout: (
             <>
                 <Outlet></Outlet>
@@ -43,10 +43,10 @@ const Routelist: RouteType[] = [
         icon: null,
         sidebar: true,
         header: true,
-        component: <Checkin />,
-        path: '*',
+        component: <CheckinPage />,
+        path: '/',
         routeType: 'auth',
-        role: [],
+        role: ['Admin', 'CS'],
         layout: (
             <>
                 <Outlet></Outlet>
@@ -62,7 +62,7 @@ const Routelist: RouteType[] = [
         component: null,
         path: '/master',
         routeType: 'auth',
-        role: [],
+        role: ['Admin', 'CS'],
         layout: (
             <>
                 <Outlet></Outlet>
@@ -77,6 +77,7 @@ const Routelist: RouteType[] = [
                 component: <div />,
                 path: '/master/pos-management',
                 routeType: 'auth',
+                role: ['CS'],
                 layout: (
                     <>
                         <Outlet></Outlet>
@@ -91,6 +92,7 @@ const Routelist: RouteType[] = [
                 component: <PartnershipPage />,
                 path: '/master/partnership',
                 routeType: 'auth',
+                role: ['Admin', 'CS'],
                 layout: (
                     <>
                         <Outlet></Outlet>

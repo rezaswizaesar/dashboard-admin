@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import AuthLayout from '../components/Layout/Auth';
 import GuestLayout from '../components/Layout/Guest';
 import Routelist from './RouteList';
@@ -42,6 +42,8 @@ const RouteLayout: React.FC = () => {
                     </Route>
                 );
             })}
+            {/* redirect undefined/not found page to index (check-in page) */}
+            <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
     );
 };
