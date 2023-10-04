@@ -1,4 +1,5 @@
 import { Button, Card, Form, Input } from 'antd';
+import { MailOutlined, KeyOutlined } from '@ant-design/icons';
 import useLoginHandler from '../Handler';
 
 const LoginForm = () => {
@@ -19,7 +20,8 @@ const LoginForm = () => {
                         }
                     ]}>
                     <Input
-                        size="middle"
+                        prefix={<MailOutlined />}
+                        size="large"
                         type="email"
                         autoComplete="new-email"
                         placeholder="Email"
@@ -33,7 +35,8 @@ const LoginForm = () => {
                         }
                     ]}>
                     <Input
-                        size="middle"
+                        prefix={<KeyOutlined />}
+                        size="large"
                         type="password"
                         autoComplete="new-password"
                         placeholder="Password"
@@ -43,9 +46,10 @@ const LoginForm = () => {
                     <Form.Item shouldUpdate className="submit">
                         {() => (
                             <Button
-                                size="middle"
+                                size="large"
                                 htmlType="submit"
                                 type="primary"
+                                block
                                 loading={isLoading || false}
                                 disabled={
                                     !form.isFieldsTouched(true) ||
@@ -54,7 +58,7 @@ const LoginForm = () => {
                                         .filter(({ errors }) => errors.length)
                                         .length > 0
                                 }>
-                                Sign in
+                                Sign In
                             </Button>
                         )}
                     </Form.Item>

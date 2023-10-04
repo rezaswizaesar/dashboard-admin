@@ -1,9 +1,10 @@
 import { Dispatch, ReactNode } from "react";
 import { ILocationRes } from "../Global/LocationList";
+import { IConfigRes } from "../Layout/Auth";
 
 export interface IStateItem {
   key: string
-  data: any[]
+  data: any
 }
 
 export interface IUser {
@@ -21,6 +22,7 @@ export interface IContextState {
   typeUser: string
   token?: string
   locationList?: ILocationRes[]
+  config?: IConfigRes
 }
 
 export interface IContextModel {

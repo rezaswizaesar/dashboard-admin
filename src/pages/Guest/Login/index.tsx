@@ -1,10 +1,10 @@
 import { Col, Row } from 'antd';
 import React from 'react';
 import packageJson from '../../../../package.json';
-import { Container } from '../../../helper/Style';
 import FitHubLogo from '../../../assets/images/fithub-tp.png';
+import { Container } from '../../../helper/Style';
 import LoginStyle from './Style';
-import LoginForm from './Component/LoginForm';
+import LoginForm from './component/LoginForm';
 
 const LoginPage: React.FC = () => {
     return (
@@ -40,7 +40,7 @@ const LoginPage: React.FC = () => {
                     <div className="login-section">
                         <div className="login-section__card">
                             <Row gutter={16} justify="center">
-                                <Col span={8}>
+                                <Col span={8} xxl={{ span: 6 }}>
                                     <LoginForm />
                                 </Col>
                             </Row>

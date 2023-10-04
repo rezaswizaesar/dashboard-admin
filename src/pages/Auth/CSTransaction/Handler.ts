@@ -21,7 +21,7 @@ const useCSTransactionHandler = () => {
   }
 
   const displayLocation = () => {
-    console.log("location List => ", state)
+    console.log("Location List => ", state)
   }
 
   useEffect(() => {
