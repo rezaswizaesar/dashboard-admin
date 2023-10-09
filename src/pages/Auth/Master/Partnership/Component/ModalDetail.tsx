@@ -1,7 +1,7 @@
 import { Checkbox, Form, Modal } from 'antd';
 import { TypePartnershipModal } from '../../../../../types/Partnership';
 
-const ModalDetailPartnership = (Props: TypePartnershipModal) => {
+const ModalDetail = (Props: TypePartnershipModal) => {
     const { showModal, closeModal, selectedData } = Props;
 
     return (
@@ -80,4 +80,4 @@ const ModalDetailPartnership = (Props: TypePartnershipModal) => {
     );
 };
 
-export default ModalDetailPartnership;
+export default ModalDetail;

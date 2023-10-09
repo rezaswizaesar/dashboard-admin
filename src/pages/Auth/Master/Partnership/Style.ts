@@ -12,4 +12,10 @@ const PartnershipStyle = styled.section`
         }
     };
 `;
+
+export const TotalDataStyle = styled.div`
+    color: white;
+    font-size: 14px;
+    margin-bottom: 15px;
+`;
 export default PartnershipStyle;

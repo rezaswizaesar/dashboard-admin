@@ -4,12 +4,14 @@ import {
     TypePartnershipResp,
     TypePartnershipTableProps
 } from '../../../../../types/Partnership';
-// import { TypePartnershipResp, TypePartnershipTableProps } from '@/types/Partnership';
+import usePartnershipHandler from '../Handler';
+import { TotalDataStyle } from '../Style';
 
 const TablePartnership = ({
     dataTable,
     showDetail
 }: TypePartnershipTableProps) => {
+    
     const columnsPartnershipTable: ColumnsType<TypePartnershipResp> = [
         {
             title: 'Name',
@@ -44,11 +46,16 @@ const TablePartnership = ({
         }
     ];
     return (
-        <Table
-            data-testid="table-showing"
-            columns={columnsPartnershipTable}
-            dataSource={dataTable}
-        />
+        <>
+            <TotalDataStyle>
+                Total Rows: {dataTable.length}
+            </TotalDataStyle>
+            <Table
+                data-testid="table-showing"
+                columns={columnsPartnershipTable}
+                dataSource={dataTable}
+            />
+        </>
     );
 };
 

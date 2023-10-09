@@ -3,17 +3,31 @@ import { usePartnershipService } from '../../../../Service/Master/Partnership';
 import { PartnershipServiceError, TypePartnershipResp } from '../../../../types/Partnership';
 
 const usePartnershipHandler = () => {
-    const [selectType, setSelectType] = useState("");
+    const partnerTypeOption = [
+        {
+            label: 'Ownership',
+            value: 'OWNERSHIP'
+        },
+        {
+            label: 'Corporate Membership',
+            value: 'CORPORATE MEMBERSHIP'
+        },
+        {
+            label: 'Collaboration',
+            value: 'COLLABORATION'
+        }
+    ];
+    const [partnerType, setpartnerType] = useState("");
     const [isLoading, setIsLoading] = useState(false);
+    const [isShowModal, setIsShowModal] = useState(false);
     const [isSuccess, setIsSuccess] = useState(true);
     const [dataTable, setDataTable] = useState<TypePartnershipResp[]>([]);
-    const [showModal, setShowModal] = useState(false);
     const [selectedData, setSelectedData] = useState<TypePartnershipResp | null>(null);
-    const service = usePartnershipService()
+    const service = usePartnershipService();
 
     const onChangeType = async (value: string) =>{
         setIsLoading(true);
-        setSelectType(value);
+        setpartnerType(value);
         let response = await service.getPartnership({
             partnershipType: value
         })
@@ -27,16 +41,16 @@ const usePartnershipHandler = () => {
     }
 
     const openDetail = (selectedData: TypePartnershipResp) =>{
-        setShowModal(true);
+        setIsShowModal(true);
         setSelectedData(selectedData);
     };
     
     const closeDetail = () =>{
-        setShowModal(false);
+        setIsShowModal(false);
         setSelectedData(null);
     };
 
-    return { isLoading, selectType, dataTable, showModal, selectedData, onChangeType, openDetail, closeDetail, isSuccess };
+    return { partnerType, partnerTypeOption, onChangeType, isLoading, dataTable, isShowModal, selectedData, openDetail, closeDetail, isSuccess };
 }
 
 export default usePartnershipHandler;

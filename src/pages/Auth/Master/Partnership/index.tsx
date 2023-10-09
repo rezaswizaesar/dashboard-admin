@@ -1,25 +1,26 @@
 import {
     Row,
     Col,
-    Form, //Select,
+    Form,
     message
 } from 'antd';
 import usePartnershipHandler from './Handler';
 import PartnershipPageStyle from './Style';
 import { useEffect } from 'react';
-import ModalDetailPartnership from './Component/ModalDetail';
+import ModalDetail from './Component/ModalDetail';
 import TablePartnership from './Component/Table';
 import SelectCostume from '../../../../components/Select';
 import Loading from '../../../../components/Loading';
 
 const PartnershipPage: React.FC = () => {
     const {
-        // selectType,
+        partnerType,
+        partnerTypeOption,
+        onChangeType,
         isLoading,
         dataTable,
-        showModal,
+        isShowModal,
         selectedData,
-        onChangeType,
         openDetail,
         closeDetail,
         isSuccess
@@ -38,18 +39,10 @@ const PartnershipPage: React.FC = () => {
                     <Form.Item wrapperCol={{ span: 24 }} label="Type">
                         <SelectCostume
                             onChange={onChangeType}
-                            name=""
+                            name="partnerType"
+                            value={partnerType}
                             dataTestId="select-type"
-                            options={[
-                                {
-                                    label: 'Ownership',
-                                    value: 'OWNERSHIP'
-                                },
-                                {
-                                    label: 'Corporate Membership',
-                                    value: 'CORPORATE MEMBERSHIP'
-                                }
-                            ]}></SelectCostume>
+                            options={partnerTypeOption}></SelectCostume>
                     </Form.Item>
                 </Col>
             </Row>
@@ -63,9 +56,9 @@ const PartnershipPage: React.FC = () => {
                     />
                 </div>
             )}
-            <ModalDetailPartnership
+            <ModalDetail
                 selectedData={selectedData}
-                showModal={showModal}
+                showModal={isShowModal}
                 closeModal={closeDetail}
             />
         </PartnershipPageStyle>
